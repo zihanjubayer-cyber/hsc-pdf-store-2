@@ -1235,5 +1235,20 @@
             showToast('সেটিংস সেভ করা হয়েছে!');
         }
     </script>
+<script>
+    // Netlify এর ব্যাজ বা উইজেট স্বয়ংক্রিয়ভাবে মুছে ফেলার স্ক্রিপ্ট
+    window.addEventListener('DOMContentLoaded', (event) => {
+        const netlifyBadge = document.querySelector('netlify-badge') || document.querySelector('.netlify-identity-widget');
+        if (netlifyBadge) netlifyBadge.remove();
+        
+        // অনেক সময় iframe আকারে আসে, তাই সেগুলোও রিমুভ করার কোড
+        document.querySelectorAll('iframe').forEach(iframe => {
+            if (iframe.src && iframe.src.includes('netlify')) {
+                iframe.remove();
+            }
+        });
+    });
+</script>
+
 </body>
 </html>
