@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HSC সলিউশন হাব - অধ্যায়ভিত্তিক PDF দোকান</title>
+    <title>HSC সলিউশন হাব - অধ্যায়ভিত্তিক ও পূর্ণাঙ্গ বই PDF দোকান</title>
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- FontAwesome Icons -->
@@ -66,19 +66,17 @@
                     </div>
                     <div>
                         <h1 class="text-lg sm:text-2xl font-bold text-slate-900 leading-tight">HSC সলিউশন হাব</h1>
-                        <p class="text-xs text-slate-500 font-medium hidden sm:block">পদার্থ, রসায়ন ও উচ্চতর গণিত সলিউশন PDF</p>
+                        <p class="text-xs text-slate-500 font-medium hidden sm:block">অধ্যায়ভিত্তিক ও পূর্ণাঙ্গ বই সলিউশন PDF</p>
                     </div>
                 </div>
 
                 <!-- Right Action Buttons -->
                 <div class="flex items-center space-x-2 sm:space-x-3">
-                    <!-- Order Status Check Button -->
                     <button onclick="openModal('trackOrderModal')" class="flex items-center gap-2 bg-slate-100 hover:bg-slate-200 text-slate-700 px-3 py-2 sm:px-4 sm:py-2 rounded-xl text-xs sm:text-sm font-semibold transition active:scale-95">
                         <i class="fa-solid fa-magnifying-glass text-brand-600"></i>
                         <span class="hidden xs:inline">অর্ডার স্ট্যাটাস</span>
                     </button>
 
-                    <!-- Admin Panel Button -->
                     <button onclick="checkAdminAccess()" class="flex items-center gap-2 bg-brand-600 hover:bg-brand-700 text-white px-3 py-2 sm:px-4 sm:py-2 rounded-xl text-xs sm:text-sm font-semibold shadow-md shadow-brand-500/20 transition active:scale-95">
                         <i class="fa-solid fa-user-shield"></i>
                         <span>এডমিন প্যানেল</span>
@@ -96,15 +94,15 @@
             <div class="absolute -right-10 -bottom-10 w-48 h-48 bg-brand-500/10 rounded-full blur-3xl pointer-events-none"></div>
             <div class="relative z-10 max-w-3xl">
                 <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-brand-500/30 text-brand-200 border border-brand-400/30 mb-3">
-                    <i class="fa-solid fa-bolt text-yellow-400"></i> সেরা মানের সলিউশন নোট
+                    <i class="fa-solid fa-bolt text-yellow-400"></i> সেরা মানের সলিউশন নোট ও ফুল বুক প্যাকেজ
                 </span>
-                <h2 class="text-2xl sm:text-4xl font-bold leading-tight mb-3">HSC সায়েন্সের সকল জনপ্রিয় লেখকের অধ্যায়ভিত্তিক সলিউশন PDF</h2>
+                <h2 class="text-2xl sm:text-4xl font-bold leading-tight mb-3">HSC সায়েন্সের অধ্যায়ভিত্তিক ও পূর্ণাঙ্গ বই সলিউশন PDF</h2>
                 <p class="text-slate-300 text-sm sm:text-base leading-relaxed mb-4">
-                    শাহজাহান তপন, হাজারী-নাগ, কেতাব উদ্দীন ও অক্ষরপত্রের মতো প্রখ্যাত লেখকদের বইয়ের পূর্ণাঙ্গ সমাধান এখন মোবাইলেই মুহূর্তে পেয়ে যান।
+                    শাহজাহান তপন, হাজারী-নাগ, কেতাব উদ্দীন ও অক্ষরপত্রের একক অধ্যায় কিংবা পুরো বইয়ের সম্পূর্ণ সমাধান এখন আকর্ষণীয় ছাড়ে বিকাশ পেমেন্টে মুহূর্তে পেয়ে যান।
                 </p>
                 <div class="flex flex-wrap items-center gap-4 text-xs sm:text-sm text-slate-300">
                     <div class="flex items-center gap-1.5"><i class="fa-solid fa-circle-check text-emerald-400"></i> ১০০০+ শিক্ষার্থী সেবা পেয়েছে</div>
-                    <div class="flex items-center gap-1.5"><i class="fa-solid fa-circle-check text-emerald-400"></i> অটোমেটিক পেমেন্ট ও ফ্রি নোট সুবিধা</div>
+                    <div class="flex items-center gap-1.5"><i class="fa-solid fa-circle-check text-emerald-400"></i> ফুল বইয়ের বান্ডেলে বিশেষ ছাড়</div>
                     <div class="flex items-center gap-1.5"><i class="fa-solid fa-circle-check text-emerald-400"></i> সরাসরি ড্রাইভে হাই-কোয়ালিটি PDF</div>
                 </div>
             </div>
@@ -114,14 +112,12 @@
         <section class="mb-8 space-y-4">
             <!-- Search & Author Filter Row -->
             <div class="flex flex-col sm:flex-row gap-3">
-                <!-- Search Box -->
                 <div class="relative flex-1">
                     <i class="fa-solid fa-magnifying-glass absolute left-4 top-1/2 -translate-y-1/2 text-slate-400"></i>
-                    <input type="text" id="searchInput" oninput="renderProducts()" placeholder="অধ্যায় বা লেখকের নাম দিয়ে খুঁজুন (যেমন: ভেক্টর, হাজারী...)" 
+                    <input type="text" id="searchInput" oninput="renderProducts()" placeholder="অধ্যায়, বিষয় বা বইয়ের নাম দিয়ে খুঁজুন (যেমন: উচ্চতর গণিত ১ ১ম পত্র ফুল...)" 
                         class="w-full pl-11 pr-4 py-3 bg-white border border-slate-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-brand-500 shadow-sm transition">
                 </div>
 
-                <!-- Writer Filter Dropdown -->
                 <div class="w-full sm:w-64">
                     <select id="writerFilter" onchange="renderProducts()" class="w-full px-4 py-3 bg-white border border-slate-200 rounded-xl text-sm font-medium focus:outline-none focus:ring-2 focus:ring-brand-500 shadow-sm transition">
                         <option value="ALL">সকল লেখক/রাইটার</option>
@@ -139,7 +135,10 @@
             <!-- Subject Category Tabs -->
             <div class="flex items-center gap-2 overflow-x-auto pb-2 hide-scrollbar">
                 <button onclick="setSubjectFilter('ALL')" id="tab-ALL" class="subject-tab px-4 py-2.5 rounded-xl text-sm font-semibold whitespace-nowrap transition border bg-brand-600 text-white border-brand-600 shadow-sm">
-                    <i class="fa-solid fa-border-all mr-1.5"></i> সকল বিষয়
+                    <i class="fa-solid fa-border-all mr-1.5"></i> সকল সমাধান
+                </button>
+                <button onclick="setSubjectFilter('পূর্ণাঙ্গ বই বান্ডেল')" id="tab-পূর্ণাঙ্গ বই বান্ডেল" class="subject-tab px-4 py-2.5 rounded-xl text-sm font-semibold whitespace-nowrap transition border bg-white text-slate-600 border-slate-200 hover:bg-slate-50">
+                    <i class="fa-solid fa-box-archive mr-1.5 text-amber-500"></i> 📦 পূর্ণাঙ্গ বই বান্ডেল
                 </button>
                 <button onclick="setSubjectFilter('পদার্থবিজ্ঞান')" id="tab-পদার্থবিজ্ঞান" class="subject-tab px-4 py-2.5 rounded-xl text-sm font-semibold whitespace-nowrap transition border bg-white text-slate-600 border-slate-200 hover:bg-slate-50">
                     <i class="fa-solid fa-atom mr-1.5 text-blue-500"></i> পদার্থবিজ্ঞান
@@ -184,7 +183,7 @@
                 <div class="w-6 h-6 bg-brand-600 text-white rounded-lg flex items-center justify-center font-bold text-xs">H</div>
                 <span class="font-bold text-slate-800 text-sm">HSC সলিউশন হাব</span>
             </div>
-            <p>এইচএসসি পদার্থ বিজ্ঞান, রসায়ন ও উচ্চতর গণিত অধ্যায়ভিত্তিক সমাধান পিডিএফ ই-কমার্স প্লাটফর্ম।</p>
+            <p>এইচএসসি পদার্থ বিজ্ঞান, রসায়ন ও উচ্চতর গণিত অধ্যায়ভিত্তিক ও পূর্ণাঙ্গ বই সলিউশন ই-কমার্স প্লাটফর্ম।</p>
             <p class="text-slate-400">© <span id="yearSpan"></span> HSC Solution Hub. সর্বস্বত্ব সংরক্ষিত।</p>
         </div>
     </footer>
@@ -215,7 +214,7 @@
                     </div>
                     <div class="flex justify-between items-center">
                         <span class="text-xs text-slate-600 font-semibold">ডাউনলোড সুবিধা:</span>
-                        <span class="text-xs font-bold text-emerald-600"><i class="fa-solid fa-bolt"></i> পেমেন্ট বা কনফার্মেশনের পর সাথে সাথে</span>
+                        <span class="text-xs font-bold text-emerald-600"><i class="fa-solid fa-bolt"></i> পেমেন্ট অনুমোদনের সাথে সাথে</span>
                     </div>
                 </div>
 
@@ -229,18 +228,7 @@
 
                 <div>
                     <h4 class="text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">নমুনা ও বিবরণী:</h4>
-                    <div id="previewDescription" class="text-xs text-slate-600 leading-relaxed space-y-2 bg-slate-50 p-3 rounded-xl border border-slate-100">
-                        <!-- Description inserted via JS -->
-                    </div>
-                </div>
-
-                <div class="border-t border-slate-100 pt-3">
-                    <h4 class="text-xs font-bold text-slate-700 mb-2">এই পিডিএফে যা যা থাকছে:</h4>
-                    <ul class="text-xs text-slate-600 space-y-1.5">
-                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-500"></i> সকল অনুশীলনীর প্রশ্নের নির্ভুল সমাধান</li>
-                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-500"></i> গুরুত্বপূর্ণ বোর্ড পরীক্ষার সিকিউ (CQ) টাইপ সমাধান</li>
-                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-500"></i> শর্টকাট ট্রিকস সহ এমসিকিউ (MCQ) ব্যাখ্যা</li>
-                    </ul>
+                    <div id="previewDescription" class="text-xs text-slate-600 leading-relaxed space-y-2 bg-slate-50 p-3 rounded-xl border border-slate-100"></div>
                 </div>
             </div>
 
@@ -256,7 +244,6 @@
     <!-- MODAL 2: Checkout & bKash Payment / Promo Modal -->
     <div id="checkoutModal" class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-50 flex items-center justify-center p-4 hidden">
         <div class="bg-white w-full max-w-md rounded-2xl shadow-2xl overflow-hidden animate-fade-in flex flex-col max-h-[92vh]">
-            <!-- Modal Header -->
             <div class="bg-bkash text-white p-4 flex items-center justify-between">
                 <div class="flex items-center gap-2">
                     <div class="w-8 h-8 bg-white/20 rounded-lg flex items-center justify-center font-bold">bK</div>
@@ -271,7 +258,6 @@
             </div>
 
             <div class="p-5 overflow-y-auto space-y-4 flex-1">
-                <!-- Selected Product Summary -->
                 <div class="bg-slate-50 p-3 rounded-xl border border-slate-200 flex justify-between items-center">
                     <div>
                         <p class="text-[10px] uppercase font-bold text-slate-400">নির্বাচিত বিষয়:</p>
@@ -283,7 +269,6 @@
                     </div>
                 </div>
 
-                <!-- Promo Code Box -->
                 <div class="bg-slate-50 p-3 rounded-xl border border-slate-200 space-y-2">
                     <label class="block text-xs font-bold text-slate-700">প্রোমো/কুপন কোড (যদি থাকে):</label>
                     <div class="flex gap-2">
@@ -293,7 +278,6 @@
                     <p id="promoMessage" class="text-[11px] font-semibold hidden"></p>
                 </div>
 
-                <!-- Step-by-step bKash Instructions (For Paid PDFs) -->
                 <div id="bkashPaymentInstructions" class="bg-pink-50/70 border border-pink-200 p-4 rounded-xl space-y-2 text-xs text-slate-700">
                     <p class="font-bold text-slate-900 flex items-center gap-1.5">
                         <i class="fa-solid fa-circle-info text-bkash"></i> টাকা পাঠানোর নিয়মাবলী:
@@ -304,7 +288,6 @@
                         <li>টাকা পাঠানো শেষে নিচে আপনার **বিকাশ মোবাইল নম্বর** ও **TrxID** দিয়ে অর্ডার সম্পন্ন করুন।</li>
                     </ol>
 
-                    <!-- bKash Number Display Box -->
                     <div class="mt-3 bg-white p-3 rounded-xl border border-pink-200 flex items-center justify-between shadow-sm">
                         <div>
                             <span id="checkoutBkashType" class="text-[10px] text-slate-400 font-bold block">বিকাশ পার্সোনাল নম্বর:</span>
@@ -316,7 +299,6 @@
                     </div>
                 </div>
 
-                <!-- Free Download Box (For ৳0 or 100% Promo Code) -->
                 <div id="freeDownloadNotice" class="hidden bg-emerald-50 border border-emerald-200 p-4 rounded-xl text-xs text-emerald-800 space-y-2">
                     <p class="font-bold flex items-center gap-1.5 text-emerald-900">
                         <i class="fa-solid fa-gift text-emerald-600"></i> বিনামূল্যে সংগ্রহ করুন!
@@ -329,7 +311,6 @@
                     </button>
                 </div>
 
-                <!-- Order Form (For Paid PDFs) -->
                 <form id="orderForm" onsubmit="submitOrder(event)" class="space-y-3 pt-1">
                     <div>
                         <label class="block text-xs font-bold text-slate-700 mb-1">আপনার বিকাশ মোবাইল নম্বর *</label>
@@ -341,7 +322,6 @@
                         <label class="block text-xs font-bold text-slate-700 mb-1">বিকাশ ট্রানজেকশন আইডি (TrxID) *</label>
                         <input type="text" id="custTrxId" required placeholder="যেমন: 9J7A2K8LM" 
                             class="w-full px-3 py-2.5 bg-white border border-slate-300 rounded-xl text-xs font-mono uppercase focus:ring-2 focus:ring-bkash focus:outline-none">
-                        <p class="text-[10px] text-slate-400 mt-0.5">বিকাশ মেসেজে আসা ৮-১০ ডিজিটের TrxID টি দিন</p>
                     </div>
 
                     <button type="submit" class="w-full py-3 bg-bkash hover:bg-pink-700 text-white font-bold text-xs rounded-xl shadow-lg shadow-pink-500/20 transition active:scale-95 flex items-center justify-center gap-2 mt-2">
@@ -402,10 +382,9 @@
         </div>
     </div>
 
-    <!-- MODAL 5: Full Admin Dashboard Drawer / Full Screen -->
+    <!-- MODAL 5: Full Admin Dashboard Drawer -->
     <div id="adminModal" class="fixed inset-0 bg-slate-900/80 backdrop-blur-md z-50 flex items-center justify-center p-2 sm:p-4 hidden">
         <div class="bg-slate-100 w-full max-w-5xl h-[95vh] rounded-2xl shadow-2xl flex flex-col overflow-hidden">
-            <!-- Admin Top Bar -->
             <div class="bg-slate-900 text-white px-5 py-3.5 flex items-center justify-between">
                 <div class="flex items-center gap-2">
                     <span class="bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 text-[10px] font-bold px-2 py-0.5 rounded-full">এডমিন মোড</span>
@@ -416,7 +395,6 @@
                 </button>
             </div>
 
-            <!-- Admin Navigation Tabs -->
             <div class="bg-white border-b border-slate-200 px-4 flex items-center gap-2 overflow-x-auto hide-scrollbar">
                 <button onclick="switchAdminTab('orders')" id="adminTab-orders" class="admin-tab px-4 py-3 text-xs font-bold border-b-2 border-brand-600 text-brand-600 whitespace-nowrap">
                     <i class="fa-solid fa-cart-shopping mr-1"></i> অর্ডারসমূহ (<span id="adminPendingCount">০</span>)
@@ -430,15 +408,11 @@
                 <button onclick="switchAdminTab('settings')" id="adminTab-settings" class="admin-tab px-4 py-3 text-xs font-bold border-b-2 border-transparent text-slate-500 hover:text-slate-800 whitespace-nowrap">
                     <i class="fa-solid fa-gear mr-1"></i> বিকাশ ও সেটিংস
                 </button>
-                <button onclick="switchAdminTab('guide')" id="adminTab-guide" class="admin-tab px-4 py-3 text-xs font-bold border-b-2 border-transparent text-slate-500 hover:text-slate-800 whitespace-nowrap">
-                    <i class="fa-solid fa-mobile-screen-button mr-1"></i> মোবাইল ব্যবহারের নিয়ম
-                </button>
             </div>
 
-            <!-- Admin Content Container -->
             <div class="p-4 sm:p-6 overflow-y-auto flex-1 space-y-6">
 
-                <!-- TAB 1: ORDERS MANAGEMENT -->
+                <!-- TAB 1: ORDERS -->
                 <div id="adminSection-orders" class="space-y-4">
                     <div class="flex items-center justify-between">
                         <h4 class="text-sm font-bold text-slate-800">গ্রাহকদের বিকাশে প্রাপ্ত অর্ডারসমূহ</h4>
@@ -461,46 +435,44 @@
                                         <th class="p-3 text-right">অ্যাকশন</th>
                                     </tr>
                                 </thead>
-                                <tbody id="adminOrdersTable" class="divide-y divide-slate-100">
-                                    <!-- Dynamic injection -->
-                                </tbody>
+                                <tbody id="adminOrdersTable" class="divide-y divide-slate-100"></tbody>
                             </table>
                         </div>
                     </div>
                 </div>
 
-                <!-- TAB 2: PRODUCTS MANAGEMENT -->
+                <!-- TAB 2: PRODUCTS -->
                 <div id="adminSection-products" class="space-y-6 hidden">
-                    <!-- Add / Edit PDF Form -->
                     <div class="bg-white p-4 sm:p-5 rounded-xl border border-slate-200 shadow-sm">
                         <h4 id="productFormTitle" class="text-sm font-bold text-slate-800 mb-3 pb-2 border-b border-slate-100">
-                            নতুন PDF সলিউশন যোগ করুন
+                            নতুন PDF সলিউশন বা পূর্ণাঙ্গ বই যোগ করুন
                         </h4>
                         <form id="productForm" onsubmit="saveProduct(event)" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
                             <input type="hidden" id="editProductId" value="">
                             
                             <div>
                                 <label class="block text-[11px] font-bold text-slate-600 mb-1">অধ্যায়/পিডিএফ শিরোনাম *</label>
-                                <input type="text" id="prodTitle" required placeholder="যেমন: ১ম অধ্যায় - ভেক্টর সমাধান" class="w-full px-3 py-2 border rounded-xl text-xs">
+                                <input type="text" id="prodTitle" required placeholder="যেমন: উচ্চতর গণিত ১ম পত্র - সম্পূর্ণ বই" class="w-full px-3 py-2 border rounded-xl text-xs">
                             </div>
                             
                             <div>
-                                <label class="block text-[11px] font-bold text-slate-600 mb-1">বিষয় সিলেক্ট করুন *</label>
+                                <label class="block text-[11px] font-bold text-slate-600 mb-1">বিষয়/ক্যাটাগরি সিলেক্ট করুন *</label>
                                 <select id="prodSubject" required class="w-full px-3 py-2 border rounded-xl text-xs bg-white">
-                                    <option value="পদার্থবিজ্ঞান">পদার্থবিজ্ঞান</option>
-                                    <option value="রসায়ন">রসায়ন</option>
-                                    <option value="উচ্চতর গণিত">উচ্চতর গণিত</option>
+                                    <option value="পদার্থবিজ্ঞান">পদার্থবিজ্ঞান (অধ্যায়)</option>
+                                    <option value="রসায়ন">রসায়ন (অধ্যায়)</option>
+                                    <option value="উচ্চতর গণিত">উচ্চতর গণিত (অধ্যায়)</option>
+                                    <option value="পূর্ণাঙ্গ বই বান্ডেল">📦 পূর্ণাঙ্গ বই বান্ডেল (Full Book)</option>
                                 </select>
                             </div>
 
                             <div>
                                 <label class="block text-[11px] font-bold text-slate-600 mb-1">লেখকের নাম (Author) *</label>
-                                <input type="text" id="prodWriter" required placeholder="যেমন: ড. শাহজাহান তপন" class="w-full px-3 py-2 border rounded-xl text-xs">
+                                <input type="text" id="prodWriter" required placeholder="যেমন: কেতাব উদ্দীন" class="w-full px-3 py-2 border rounded-xl text-xs">
                             </div>
 
                             <div>
                                 <label class="block text-[11px] font-bold text-slate-600 mb-1">মূল্য (টাকা) * [ফ্রি করতে 0 দিন]</label>
-                                <input type="number" id="prodPrice" min="0" required placeholder="যেমন: ২৫ বা ০" class="w-full px-3 py-2 border rounded-xl text-xs">
+                                <input type="number" id="prodPrice" min="0" required placeholder="যেমন: ১৫০ বা ০" class="w-full px-3 py-2 border rounded-xl text-xs">
                             </div>
 
                             <div class="sm:col-span-2">
@@ -515,7 +487,7 @@
 
                             <div class="sm:col-span-3">
                                 <label class="block text-[11px] font-bold text-slate-600 mb-1">সংক্ষিপ্ত বিবরণ বা নমুনা নোটের বর্ণনা</label>
-                                <textarea id="prodDesc" rows="2" placeholder="নোটটির বৈশিষ্ট্য বা কোনো বিশেষ তথ্য সংক্ষেপে লিখুন..." class="w-full px-3 py-2 border rounded-xl text-xs"></textarea>
+                                <textarea id="prodDesc" rows="2" placeholder="পুরো বইয়ের সলিউশন বান্ডেলের বিবরণ..." class="w-full px-3 py-2 border rounded-xl text-xs"></textarea>
                             </div>
 
                             <div class="sm:col-span-3 flex justify-end gap-2 pt-2">
@@ -525,7 +497,6 @@
                         </form>
                     </div>
 
-                    <!-- Existing Products List -->
                     <div class="bg-white rounded-xl border border-slate-200 shadow-sm overflow-hidden">
                         <div class="p-3 bg-slate-50 border-b border-slate-200 font-bold text-xs text-slate-700">
                             বর্তমান পিডিএফের তালিকা
@@ -534,22 +505,20 @@
                             <table class="w-full text-left text-xs text-slate-600">
                                 <thead class="bg-slate-100 text-slate-700 font-bold">
                                     <tr>
-                                        <th class="p-3">বিষয়</th>
+                                        <th class="p-3">বিষয়/ক্যাটাগরি</th>
                                         <th class="p-3">শিরোনাম</th>
                                         <th class="p-3">লেখক</th>
                                         <th class="p-3">দাম</th>
                                         <th class="p-3 text-right">অ্যাকশন</th>
                                     </tr>
                                 </thead>
-                                <tbody id="adminProductsTable" class="divide-y divide-slate-100">
-                                    <!-- Dynamic injection -->
-                                </tbody>
+                                <tbody id="adminProductsTable" class="divide-y divide-slate-100"></tbody>
                             </table>
                         </div>
                     </div>
                 </div>
 
-                <!-- TAB 3: PROMO CODES MANAGEMENT -->
+                <!-- TAB 3: PROMOS -->
                 <div id="adminSection-promos" class="space-y-6 hidden">
                     <div class="bg-white p-4 sm:p-5 rounded-xl border border-slate-200 shadow-sm">
                         <h4 class="text-sm font-bold text-slate-800 mb-3 pb-2 border-b border-slate-100">
@@ -558,7 +527,7 @@
                         <form onsubmit="savePromoCode(event)" class="grid grid-cols-1 sm:grid-cols-3 gap-3">
                             <div>
                                 <label class="block text-[11px] font-bold text-slate-600 mb-1">কুপন/প্রোমো কোড *</label>
-                                <input type="text" id="promoCodeName" required placeholder="যেমন: FREE100 বা SAVE10" class="w-full px-3 py-2 border rounded-xl text-xs uppercase font-mono">
+                                <input type="text" id="promoCodeName" required placeholder="যেমন: FREE100 বা SAVE20" class="w-full px-3 py-2 border rounded-xl text-xs uppercase font-mono">
                             </div>
                             
                             <div>
@@ -570,8 +539,8 @@
                             </div>
 
                             <div>
-                                <label class="block text-[11px] font-bold text-slate-600 mb-1">ছাড়ের পরিমাণ * (100% বা 20৳)</label>
-                                <input type="number" id="promoDiscountValue" min="1" required placeholder="যেমন: 100 বা 20" class="w-full px-3 py-2 border rounded-xl text-xs">
+                                <label class="block text-[11px] font-bold text-slate-600 mb-1">ছাড়ের পরিমাণ * (100% বা 50৳)</label>
+                                <input type="number" id="promoDiscountValue" min="1" required placeholder="যেমন: 100 বা 50" class="w-full px-3 py-2 border rounded-xl text-xs">
                             </div>
 
                             <div class="sm:col-span-3 flex justify-end pt-2">
@@ -594,15 +563,13 @@
                                         <th class="p-3 text-right">অ্যাকশন</th>
                                     </tr>
                                 </thead>
-                                <tbody id="adminPromosTable" class="divide-y divide-slate-100">
-                                    <!-- Dynamic injection -->
-                                </tbody>
+                                <tbody id="adminPromosTable" class="divide-y divide-slate-100"></tbody>
                             </table>
                         </div>
                     </div>
                 </div>
 
-                <!-- TAB 4: BKASH & SETTINGS -->
+                <!-- TAB 4: SETTINGS -->
                 <div id="adminSection-settings" class="space-y-4 hidden max-w-xl">
                     <div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm space-y-4">
                         <h4 class="text-sm font-bold text-slate-800 border-b pb-2">বিকাশ ও এডমিন নিরাপত্তা সেটিংস</h4>
@@ -611,7 +578,6 @@
                             <div>
                                 <label class="block text-xs font-bold text-slate-700 mb-1">আপনার বিকাশ পেমেন্ট নম্বর</label>
                                 <input type="text" id="settingBkashNo" required class="w-full px-3 py-2.5 border rounded-xl text-xs font-mono font-bold">
-                                <p class="text-[10px] text-slate-400 mt-0.5">যে নম্বরে গ্রাহকরা সেন্ড মানি করবেন</p>
                             </div>
 
                             <div>
@@ -631,70 +597,24 @@
                     </div>
                 </div>
 
-                <!-- TAB 5: MOBILE OPERATING GUIDE -->
-                <div id="adminSection-guide" class="space-y-4 hidden">
-                    <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm space-y-6 text-xs text-slate-700 leading-relaxed">
-                        <div>
-                            <h3 class="text-base font-bold text-slate-900 flex items-center gap-2 text-brand-600">
-                                <i class="fa-solid fa-mobile-screen-button"></i> মোবাইল দিয়ে ওয়েবসাইট পরিচালনার সহজ নির্দেশিকা
-                            </h3>
-                            <p class="text-slate-500 mt-1">আপনার স্মার্টফোন ব্যবহার করে কীভাবে সহজেই সম্পূর্ণ ই-কমার্স স্টোরটি চালাবেন তা নিচে ধাপে ধাপে বোঝানো হলো:</p>
-                        </div>
-
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                            <!-- Step 1 -->
-                            <div class="p-4 rounded-xl bg-slate-50 border border-slate-200 space-y-2">
-                                <span class="bg-brand-600 text-white w-6 h-6 rounded-full inline-flex items-center justify-center font-bold text-xs">১</span>
-                                <h4 class="font-bold text-slate-800 text-sm">গুগল ড্রাইভে PDF আপলোড ও লিংক নেওয়া</h4>
-                                <p class="text-slate-600">
-                                    ১. আপনার মোবাইলের <strong>Google Drive</strong> অ্যাপ খুলুন এবং PDF সলিউশন আপলোড করুন।<br>
-                                    ২. ফাইলের ৩ ডটে ক্লিক করে <strong>Manage Access / Share</strong> এ যান।<br>
-                                    ৩. Restricted থেকে <strong>"Anyone with the link"</strong> সিলেক্ট করুন।<br>
-                                    ৪. <strong>Copy Link</strong> এ চাপ দিয়ে লিংকটি এডমিন প্যানেলে বসান।
-                                </p>
-                            </div>
-
-                            <!-- Step 2 -->
-                            <div class="p-4 rounded-xl bg-slate-50 border border-slate-200 space-y-2">
-                                <span class="bg-bkash text-white w-6 h-6 rounded-full inline-flex items-center justify-center font-bold text-xs">২</span>
-                                <h4 class="font-bold text-slate-800 text-sm">বিকাশ পেমেন্ট যাচাই ও অনুমোদন</h4>
-                                <p class="text-slate-600">
-                                    ১. গ্রাহক অর্ডার করলে আপনার বিকাশ স্টেটমেন্ট বা SMS থেকে গ্রাহকের TrxID চেক করুন।<br>
-                                    ২. এডমিন প্যানেলের <strong>অর্ডারসমূহ</strong> ট্যাবে আসুন।<br>
-                                    ৩. টাকা জমা নিশ্চিত হলে <strong>"অনুমোদন করুন"</strong> চাপুন। অনুমোদনের সাথে সাথে গ্রাহক ওয়েবসাইটে নিজ নম্বরে ডাউনলোড লিংক পেয়ে যাবে।
-                                </p>
-                            </div>
-
-                            <!-- Step 3 -->
-                            <div class="p-4 rounded-xl bg-slate-50 border border-slate-200 space-y-2">
-                                <span class="bg-emerald-600 text-white w-6 h-6 rounded-full inline-flex items-center justify-center font-bold text-xs">৩</span>
-                                <h4 class="font-bold text-slate-800 text-sm">নতুন PDF যোগ, ফ্রি PDF ও কুপন</h4>
-                                <p class="text-slate-600">
-                                    ১. <strong>পিডিএফ পরিচালনা</strong> ট্যাবে গিয়ে শিরোনাম, লেখক, বিষয় ও দাম লিখে নতুন বই যোগ করুন। দাম 0 দিলে ফাইলটি বিনামূল্যে দেখাবে।<br>
-                                    ২. <strong>প্রোমো কোড সেটিংস</strong> ট্যাবে গিয়ে কাস্টম কুপন তৈরি করে ছাড়ের পার্সেন্ট বা টাকা সেট করুন।
-                                </p>
-                            </div>
-
-                            <!-- Step 4 -->
-                            <div class="p-4 rounded-xl bg-slate-50 border border-slate-200 space-y-2">
-                                <span class="bg-purple-600 text-white w-6 h-6 rounded-full inline-flex items-center justify-center font-bold text-xs">৪</span>
-                                <h4 class="font-bold text-slate-800 text-sm">বিকাশ নম্বর আপডেট</h4>
-                                <p class="text-slate-600">
-                                    যদি আপনার বিকাশ নম্বর পরিবর্তন করতে চান, তবে <strong>বিকাশ ও সেটিংস</strong> ট্যাবে গিয়ে নতুন নম্বর বসিয়ে সেভ করুন। গ্রাহকরা তাৎক্ষণিকভাবে নতুন নম্বরটি পেমেন্ট স্ক্রিনে দেখতে পাবে।
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
             </div>
         </div>
     </div>
 
     <!-- Application JavaScript Logic -->
     <script>
-        // Default Demo PDF Solutions Database
+        // Default Demo PDF Solutions Database (Includes Full Book Packages)
         const initialProducts = [
+            {
+                id: "p0",
+                subject: "পূর্ণাঙ্গ বই বান্ডেল",
+                title: "উচ্চতর গণিত ১ম পত্র - সকল অধ্যায়ের পূর্ণাঙ্গ সমাধান (Full Book)",
+                writer: "কেতাব উদ্দীন",
+                price: 150,
+                pdfUrl: "https://drive.google.com/file/d/1demo_ketab_full/view",
+                demoUrl: "",
+                description: "কেতাব স্যারের ১ম পত্রের ১০টি অধ্যায়েরই সম্পূর্ণ অনুশীলনী সলিউশন ও মাস্টার গাইড একত্রে।"
+            },
             {
                 id: "p1",
                 subject: "পদার্থবিজ্ঞান",
@@ -707,20 +627,20 @@
             },
             {
                 id: "p2",
-                subject: "পদার্থবিজ্ঞান",
-                title: "১ম পত্র: ৪র্থ অধ্যায় - নিউটনীয় বলবিজ্ঞান (স্পেশাল ফ্রি নোট)",
-                writer: "আমীর হোসেন ইসহাক",
+                subject: "রসায়ন",
+                title: "১ম পত্র: ২য় অধ্যায় - গুণগত রসায়ন (ফ্রি নোট)",
+                writer: "হাজারী ও নাগ",
                 price: 0,
-                pdfUrl: "https://drive.google.com/file/d/1demo_newton_ishak/view",
+                pdfUrl: "https://drive.google.com/file/d/1demo_hazari_free/view",
                 demoUrl: "",
-                description: "ইসহাক স্যারের বইয়ের সকল অনুশীলনীর সম্পূর্ণ বিনামূল্যে দেখার স্পেশাল নোট।"
+                description: "হাজারী স্যারের গুণগত রসায়নের সম্পূর্ণ বিনামূল্যে দেখার স্পেশাল নোট।"
             }
         ];
 
         // Default Demo Promo Codes
         const initialPromoCodes = [
             { id: "pr1", code: "FREE100", type: "percent", discount: 100 },
-            { id: "pr2", code: "SAVE10", type: "fixed", discount: 10 }
+            { id: "pr2", code: "SAVE50", type: "fixed", discount: 50 }
         ];
 
         // Default Initial Settings
@@ -774,13 +694,11 @@
         function showToast(message, type = 'success') {
             const container = document.getElementById('toastContainer');
             const toast = document.createElement('div');
-            
             const bgColor = type === 'success' ? 'bg-slate-900 text-white border-l-4 border-emerald-500' : 'bg-red-600 text-white';
             const icon = type === 'success' ? '<i class="fa-solid fa-circle-check text-emerald-400"></i>' : '<i class="fa-solid fa-triangle-exclamation"></i>';
             
             toast.className = `pointer-events-auto p-3.5 rounded-xl shadow-xl text-xs font-semibold flex items-center gap-2.5 transition transform duration-300 translate-y-2 opacity-0 ${bgColor}`;
             toast.innerHTML = `${icon} <span>${message}</span>`;
-            
             container.appendChild(toast);
             
             setTimeout(() => toast.classList.remove('translate-y-2', 'opacity-0'), 10);
@@ -837,35 +755,35 @@
 
             emptyState.classList.add('hidden');
             grid.innerHTML = filtered.map(item => {
+                const isFullBook = item.subject === 'পূর্ণাঙ্গ বই বান্ডেল';
                 const priceTag = item.price === 0 
                     ? `<span class="text-lg font-extrabold text-emerald-600">বিনামূল্যে (FREE)</span>`
                     : `<span class="text-xl font-extrabold text-slate-900">৳${item.price}</span>`;
 
+                const subjectBadge = isFullBook 
+                    ? `<span class="px-2.5 py-0.5 rounded-full text-[11px] font-bold bg-amber-100 text-amber-800 border border-amber-200"><i class="fa-solid fa-box-archive text-amber-600 mr-1"></i>ফুল বই সলিউশন</span>`
+                    : `<span class="px-2.5 py-0.5 rounded-full text-[11px] font-bold bg-brand-50 text-brand-600 border border-brand-100">${item.subject}</span>`;
+
                 return `
-                <div class="bg-white rounded-2xl border border-slate-200 p-5 shadow-sm hover:shadow-md transition flex flex-col justify-between group">
+                <div class="bg-white rounded-2xl border ${isFullBook ? 'border-amber-300 ring-1 ring-amber-200' : 'border-slate-200'} p-5 shadow-sm hover:shadow-md transition flex flex-col justify-between group relative overflow-hidden">
+                    ${isFullBook ? '<div class="absolute top-0 right-0 bg-amber-500 text-white text-[9px] font-black uppercase px-3 py-1 rounded-bl-xl shadow-sm"><i class="fa-solid fa-star text-yellow-200 mr-1"></i>সেরা প্যাকেজ</div>' : ''}
                     <div>
-                        <!-- Subject & Writer Row -->
                         <div class="flex items-center justify-between mb-3">
-                            <span class="px-2.5 py-0.5 rounded-full text-[11px] font-bold bg-brand-50 text-brand-600 border border-brand-100">
-                                ${item.subject}
-                            </span>
+                            ${subjectBadge}
                             <span class="text-xs font-semibold text-slate-500 bg-slate-100 px-2 py-0.5 rounded-md">
                                 <i class="fa-solid fa-pen-nib text-[10px] mr-1"></i>${item.writer}
                             </span>
                         </div>
 
-                        <!-- Chapter Title -->
                         <h4 class="text-base font-bold text-slate-900 group-hover:text-brand-600 transition leading-snug mb-2">
                             ${item.title}
                         </h4>
 
-                        <!-- Description Snippet -->
                         <p class="text-xs text-slate-500 line-clamp-2 leading-relaxed mb-4">
-                            ${item.description || 'অধ্যায়ভিত্তিক পূর্ণাঙ্গ সমাধান ও অনুশীলনীর ম্যাথ গাইড।'}
+                            ${item.description || 'অধ্যায়ভিত্তিক বা ফুল বইয়ের সলিউশন গাইড।'}
                         </p>
                     </div>
 
-                    <!-- Price & Buy Button Footer -->
                     <div class="pt-4 border-t border-slate-100 flex items-center justify-between">
                         <div>
                             <span class="text-[10px] text-slate-400 font-bold uppercase block">মূল্য:</span>
@@ -875,7 +793,7 @@
                             <button onclick="openPreviewModal('${item.id}')" class="px-3 py-2 bg-slate-100 hover:bg-slate-200 text-slate-700 font-semibold text-xs rounded-xl transition">
                                 নমুনা
                             </button>
-                            <button onclick="openCheckoutModal('${item.id}')" class="px-4 py-2 ${item.price === 0 ? 'bg-emerald-600 hover:bg-emerald-700' : 'bg-brand-600 hover:bg-brand-700'} text-white font-bold text-xs rounded-xl shadow-sm transition active:scale-95 flex items-center gap-1.5">
+                            <button onclick="openCheckoutModal('${item.id}')" class="px-4 py-2 ${item.price === 0 ? 'bg-emerald-600 hover:bg-emerald-700' : (isFullBook ? 'bg-amber-600 hover:bg-amber-700' : 'bg-brand-600 hover:bg-brand-700')} text-white font-bold text-xs rounded-xl shadow-sm transition active:scale-95 flex items-center gap-1.5">
                                 <i class="fa-solid ${item.price === 0 ? 'fa-download' : 'fa-cart-shopping'}"></i> ${item.price === 0 ? 'সংগ্রহ করুন' : 'কিনুন'}
                             </button>
                         </div>
@@ -897,9 +815,8 @@
             document.getElementById('previewTitle').textContent = product.title;
             document.getElementById('previewWriter').textContent = `লেখক/প্রকাশনী: ${product.writer}`;
             document.getElementById('previewPrice').textContent = product.price === 0 ? 'বিনামূল্যে (FREE)' : `৳${product.price}`;
-            document.getElementById('previewDescription').innerHTML = product.description || 'এই পিডিএফে রয়েছে অধ্যায়ের সকল গুরুত্বপূর্ণ উদাহরণ ও মূল বইয়ের অনুশীলনী ম্যাথ সমাধান।';
+            document.getElementById('previewDescription').innerHTML = product.description || 'এই পিডিএফে রয়েছে অধ্যায়ের সকল গুরুত্বপূর্ণ উদাহরণ ও মূল বইয়ের অনুশীলনী সমাধান।';
             
-            // Demo PDF Viewer Handling
             const demoContainer = document.getElementById('demoViewerContainer');
             const demoIframe = document.getElementById('demoIframe');
             if (product.demoUrl) {
@@ -1090,7 +1007,7 @@
                         </a>`;
                 } else {
                     statusBadge = `<span class="bg-red-100 text-red-700 font-bold px-2 py-0.5 rounded-full text-[10px]"><i class="fa-solid fa-circle-xmark mr-1"></i>বাতিলকৃত</span>`;
-                    actionArea = `<p class="text-[11px] text-red-600 bg-red-50 p-2 rounded-lg border border-red-200">সঠিক ট্রানজেকশন না পাওয়ায় অর্ডারটি বাতিল করা হয়েছে। প্রয়োজনে এডমিনের সাথে যোগাযোগ করুন।</p>`;
+                    actionArea = `<p class="text-[11px] text-red-600 bg-red-50 p-2 rounded-lg border border-red-200">সঠিক ট্রানজেকশন না পাওয়ায় অর্ডারটি বাতিল করা হয়েছে।</p>`;
                 }
 
                 return `
@@ -1102,15 +1019,13 @@
                             </div>
                             ${statusBadge}
                         </div>
-                        <div class="pt-1">
-                            ${actionArea}
-                        </div>
+                        <div class="pt-1">${actionArea}</div>
                     </div>
                 `;
             }).join('');
         }
 
-        // --- Admin Authentication & Dashboard Logic ---
+        // --- Admin Logic ---
         function checkAdminAccess() {
             document.getElementById('adminPinInput').value = '';
             openModal('adminPinModal');
@@ -1119,9 +1034,7 @@
         function verifyAdminPin(e) {
             e.preventDefault();
             const inputPin = document.getElementById('adminPinInput').value.trim();
-            const correctPin = settings.adminPin || "1234";
-
-            if (inputPin === correctPin) {
+            if (inputPin === (settings.adminPin || "1234")) {
                 closeModal('adminPinModal');
                 openAdminDashboard();
                 showToast('এডমিন প্যানেলে স্বাগতম!');
@@ -1149,12 +1062,10 @@
             document.getElementById('adminSection-products').classList.add('hidden');
             document.getElementById('adminSection-promos').classList.add('hidden');
             document.getElementById('adminSection-settings').classList.add('hidden');
-            document.getElementById('adminSection-guide').classList.add('hidden');
 
             document.getElementById(`adminSection-${tabName}`).classList.remove('hidden');
         }
 
-        // Admin Tab 1: Render Orders
         function renderAdminOrders() {
             const tbody = document.getElementById('adminOrdersTable');
             const pendingCount = orders.filter(o => o.status === 'pending').length;
@@ -1180,14 +1091,8 @@
                         <td class="p-3 font-mono font-bold text-slate-800">${order.trxId}</td>
                         <td class="p-3">${statusTag}</td>
                         <td class="p-3 text-right space-x-1">
-                            ${order.status !== 'approved' ? `
-                                <button onclick="updateOrderStatus('${order.id}', 'approved')" class="bg-emerald-600 text-white text-[11px] px-2.5 py-1 rounded-lg font-bold hover:bg-emerald-700 transition">
-                                    অনুমোদন
-                                </button>` : ''}
-                            ${order.status !== 'rejected' ? `
-                                <button onclick="updateOrderStatus('${order.id}', 'rejected')" class="bg-slate-200 text-slate-700 text-[11px] px-2.5 py-1 rounded-lg font-semibold hover:bg-red-100 hover:text-red-600 transition">
-                                    বাতিল
-                                </button>` : ''}
+                            ${order.status !== 'approved' ? `<button onclick="updateOrderStatus('${order.id}', 'approved')" class="bg-emerald-600 text-white text-[11px] px-2.5 py-1 rounded-lg font-bold hover:bg-emerald-700 transition">অনুমোদন</button>` : ''}
+                            ${order.status !== 'rejected' ? `<button onclick="updateOrderStatus('${order.id}', 'rejected')" class="bg-slate-200 text-slate-700 text-[11px] px-2.5 py-1 rounded-lg font-semibold hover:bg-red-100 hover:text-red-600 transition">বাতিল</button>` : ''}
                         </td>
                     </tr>
                 `;
@@ -1197,14 +1102,12 @@
         function updateOrderStatus(orderId, status) {
             const order = orders.find(o => o.id === orderId);
             if (!order) return;
-
             order.status = status;
             saveOrdersToStorage();
             renderAdminOrders();
             showToast(status === 'approved' ? 'অর্ডারটি অনুমোদন করা হয়েছে!' : 'অর্ডারটি বাতিল করা হয়েছে');
         }
 
-        // Admin Tab 2: Products Management
         function renderAdminProducts() {
             const tbody = document.getElementById('adminProductsTable');
             tbody.innerHTML = products.map(prod => `
@@ -1214,12 +1117,8 @@
                     <td class="p-3 text-slate-600">${prod.writer}</td>
                     <td class="p-3 font-bold ${prod.price === 0 ? 'text-emerald-600' : 'text-slate-900'}">${prod.price === 0 ? 'FREE (৳০)' : '৳' + prod.price}</td>
                     <td class="p-3 text-right space-x-1">
-                        <button onclick="editProduct('${prod.id}')" class="bg-slate-200 hover:bg-slate-300 text-slate-700 text-[11px] px-2.5 py-1 rounded-lg font-semibold">
-                            এডিট
-                        </button>
-                        <button onclick="deleteProduct('${prod.id}')" class="bg-red-50 hover:bg-red-100 text-red-600 text-[11px] px-2.5 py-1 rounded-lg font-semibold">
-                            মুছুন
-                        </button>
+                        <button onclick="editProduct('${prod.id}')" class="bg-slate-200 hover:bg-slate-300 text-slate-700 text-[11px] px-2.5 py-1 rounded-lg font-semibold">এডিট</button>
+                        <button onclick="deleteProduct('${prod.id}')" class="bg-red-50 hover:bg-red-100 text-red-600 text-[11px] px-2.5 py-1 rounded-lg font-semibold">মুছুন</button>
                     </td>
                 </tr>
             `).join('');
@@ -1238,16 +1137,11 @@
 
             if (editId) {
                 const prod = products.find(p => p.id === editId);
-                if (prod) {
-                    Object.assign(prod, { title, subject, writer, price, pdfUrl, demoUrl, description: desc });
-                }
+                if (prod) Object.assign(prod, { title, subject, writer, price, pdfUrl, demoUrl, description: desc });
                 showToast('পিডিএফ সমাধান সফলভাবে আপডেট হয়েছে!');
             } else {
-                products.unshift({
-                    id: 'p' + Date.now(),
-                    subject, title, writer, price, pdfUrl, demoUrl, description: desc
-                });
-                showToast('নতুন পিডিএফ যোগ করা হয়েছে!');
+                products.unshift({ id: 'p' + Date.now(), subject, title, writer, price, pdfUrl, demoUrl, description: desc });
+                showToast('নতুন উপাদান যোগ করা হয়েছে!');
             }
 
             saveProductsToStorage();
@@ -1269,27 +1163,26 @@
             document.getElementById('prodDemoUrl').value = prod.demoUrl || '';
             document.getElementById('prodDesc').value = prod.description || '';
 
-            document.getElementById('productFormTitle').textContent = 'পিডিএফ সমাধান এডিট করুন';
+            document.getElementById('productFormTitle').textContent = 'পিডিএফ সলিউশন এডিট করুন';
             switchAdminTab('products');
         }
 
         function deleteProduct(id) {
-            if (confirm('আপনি কি নিশ্চিত যে এই PDF টি মুছে ফেলতে চান?')) {
+            if (confirm('আপনি কি নিশ্চিত যে এটি মুছে ফেলতে চান?')) {
                 products = products.filter(p => p.id !== id);
                 saveProductsToStorage();
                 renderAdminProducts();
                 renderProducts();
-                showToast('পিডিএফ সমাধান মুছে ফেলা হয়েছে');
+                showToast('মুছে ফেলা হয়েছে');
             }
         }
 
         function resetProductForm() {
             document.getElementById('editProductId').value = '';
             document.getElementById('productForm').reset();
-            document.getElementById('productFormTitle').textContent = 'নতুন PDF সলিউশন যোগ করুন';
+            document.getElementById('productFormTitle').textContent = 'নতুন PDF সলিউশন বা পূর্ণাঙ্গ বই যোগ করুন';
         }
 
-        // Admin Tab 3: Promo Codes CRUD
         function renderAdminPromos() {
             const tbody = document.getElementById('adminPromosTable');
             tbody.innerHTML = promoCodes.map(p => `
@@ -1298,9 +1191,7 @@
                     <td class="p-3 font-medium">${p.type === 'percent' ? 'পার্সেন্ট (%)' : 'নির্দিষ্ট টাকা (৳)'}</td>
                     <td class="p-3 font-bold text-slate-800">${p.type === 'percent' ? p.discount + '%' : '৳' + p.discount}</td>
                     <td class="p-3 text-right">
-                        <button onclick="deletePromo('${p.id}')" class="bg-red-50 hover:bg-red-100 text-red-600 text-[11px] px-2.5 py-1 rounded-lg font-semibold">
-                            মুছুন
-                        </button>
+                        <button onclick="deletePromo('${p.id}')" class="bg-red-50 hover:bg-red-100 text-red-600 text-[11px] px-2.5 py-1 rounded-lg font-semibold">মুছুন</button>
                     </td>
                 </tr>
             `).join('');
@@ -1314,7 +1205,6 @@
 
             promoCodes.unshift({ id: 'pr' + Date.now(), code, type, discount });
             savePromosToStorage();
-            
             document.getElementById('promoCodeName').value = '';
             document.getElementById('promoDiscountValue').value = '';
             renderAdminPromos();
@@ -1330,7 +1220,6 @@
             }
         }
 
-        // Admin Tab 4: Settings
         function loadAdminSettings() {
             document.getElementById('settingBkashNo').value = settings.bkashNumber || '';
             document.getElementById('settingBkashType').value = settings.bkashType || '';
@@ -1342,7 +1231,6 @@
             settings.bkashNumber = document.getElementById('settingBkashNo').value.trim();
             settings.bkashType = document.getElementById('settingBkashType').value.trim();
             settings.adminPin = document.getElementById('settingAdminPin').value.trim();
-
             saveSettingsToStorage();
             showToast('সেটিংস সেভ করা হয়েছে!');
         }
