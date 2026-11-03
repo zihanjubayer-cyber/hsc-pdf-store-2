@@ -100,12 +100,12 @@
                 </span>
                 <h2 class="text-2xl sm:text-4xl font-bold leading-tight mb-3">HSC সায়েন্সের সকল জনপ্রিয় লেখকের অধ্যায়ভিত্তিক সলিউশন PDF</h2>
                 <p class="text-slate-300 text-sm sm:text-base leading-relaxed mb-4">
-                    শাহজাহান তপন, হাজারী-নাগ, কেতাব উদ্দীন ও অক্ষরপত্রের মতো প্রখ্যাত লেখকদের বইয়ের পূর্ণাঙ্গ সমাধান এখন মোবাইলেই বিকাশ ও নগদ পেমেন্টে মুহূর্তে পেয়ে যান।
+                    শাহজাহান তপন, হাজারী-নাগ, কেতাব উদ্দীন ও অক্ষরপত্রের মতো প্রখ্যাত লেখকদের বইয়ের পূর্ণাঙ্গ সমাধান এখন মোবাইলেই বিকাশ পেমেন্টে মুহূর্তে পেয়ে যান।
                 </p>
                 <div class="flex flex-wrap items-center gap-4 text-xs sm:text-sm text-slate-300">
                     <div class="flex items-center gap-1.5"><i class="fa-solid fa-circle-check text-emerald-400"></i> ১০০০+ শিক্ষার্থী সেবা পেয়েছে</div>
-                    <div class="flex items-center gap-1.5"><i class="fa-solid fa-circle-check text-emerald-400"></i> বিকাশ/নগদ অটোমেটিক পেমেন্ট</div>
-                    <div class="flex items-center gap-1.5"><i class="fa-solid fa-circle-check text-emerald-400"></i> পেমেন্ট শেষে ইন্সট্যান্ট PDF ডাউনলোড</div>
+                    <div class="flex items-center gap-1.5"><i class="fa-solid fa-circle-check text-emerald-400"></i> বিকাশ সেন্ড মানিতে সহজ পেমেন্ট</div>
+                    <div class="flex items-center gap-1.5"><i class="fa-solid fa-circle-check text-emerald-400"></i> সরাসরি ড্রাইভে হাই-কোয়ালিটি PDF</div>
                 </div>
             </div>
         </div>
@@ -215,7 +215,7 @@
                     </div>
                     <div class="flex justify-between items-center">
                         <span class="text-xs text-slate-600 font-semibold">ডাউনলোড সুবিধা:</span>
-                        <span class="text-xs font-bold text-emerald-600"><i class="fa-solid fa-bolt"></i> অটোমেটিক পেমেন্টের পর তাৎক্ষণিক</span>
+                        <span class="text-xs font-bold text-emerald-600"><i class="fa-solid fa-bolt"></i> পেমেন্ট অনুমোদনের সাথে সাথে</span>
                     </div>
                 </div>
 
@@ -238,23 +238,23 @@
 
             <div class="p-4 bg-slate-50 border-t border-slate-100 flex gap-3">
                 <button onclick="closeModal('previewModal')" class="w-1/3 py-2.5 border border-slate-300 font-semibold text-xs text-slate-700 rounded-xl hover:bg-slate-100 transition">বন্ধ করুন</button>
-                <button id="previewBuyBtn" class="w-2/3 py-2.5 bg-bkash hover:bg-pink-700 text-white font-bold text-xs rounded-xl shadow-md shadow-pink-500/20 transition active:scale-95 flex items-center justify-center gap-2">
-                    <i class="fa-solid fa-bolt"></i> অটোমেটিক পেমেন্ট করুন
+                <button id="previewBuyBtn" class="w-2/3 py-2.5 bg-brand-600 hover:bg-brand-700 text-white font-bold text-xs rounded-xl shadow-md shadow-brand-500/20 transition active:scale-95 flex items-center justify-center gap-2">
+                    <i class="fa-solid fa-cart-shopping"></i> এখনই কিনুন
                 </button>
             </div>
         </div>
     </div>
 
-    <!-- MODAL 2: Automated Payment Modal -->
+    <!-- MODAL 2: bKash Payment & Order Modal -->
     <div id="checkoutModal" class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-50 flex items-center justify-center p-4 hidden">
         <div class="bg-white w-full max-w-md rounded-2xl shadow-2xl overflow-hidden animate-fade-in flex flex-col max-h-[92vh]">
             <!-- Modal Header -->
             <div class="bg-bkash text-white p-4 flex items-center justify-between">
                 <div class="flex items-center gap-2">
-                    <div class="w-8 h-8 bg-white/20 rounded-lg flex items-center justify-center font-bold">⚡</div>
+                    <div class="w-8 h-8 bg-white/20 rounded-lg flex items-center justify-center font-bold">bK</div>
                     <div>
-                        <h3 class="text-base font-bold leading-tight">অটোমেটিক পেমেন্ট গেটওয়ে</h3>
-                        <p class="text-[11px] text-pink-100">বিকাশ / নগদ / রকেট পেমেন্ট করুন</p>
+                        <h3 class="text-base font-bold leading-tight">বিকাশ পেমেন্ট (Send Money)</h3>
+                        <p class="text-[11px] text-pink-100">নিরাপদে PDF সলিউশন ক্রয় করুন</p>
                     </div>
                 </div>
                 <button onclick="closeModal('checkoutModal')" class="text-white/80 hover:text-white w-8 h-8 rounded-full flex items-center justify-center hover:bg-white/10 transition">
@@ -264,31 +264,59 @@
 
             <div class="p-5 overflow-y-auto space-y-4 flex-1">
                 <!-- Selected Product Summary -->
-                <div class="bg-slate-50 p-3.5 rounded-xl border border-slate-200 flex justify-between items-center">
+                <div class="bg-slate-50 p-3 rounded-xl border border-slate-200 flex justify-between items-center">
                     <div>
-                        <p class="text-[10px] uppercase font-bold text-slate-400">নির্বাচিত বই/অধ্যায়:</p>
+                        <p class="text-[10px] uppercase font-bold text-slate-400">নির্বাচিত বিষয়:</p>
                         <h4 id="checkoutProductTitle" class="text-xs font-bold text-slate-800 line-clamp-1">পিডিএফ এর নাম</h4>
                     </div>
                     <div class="text-right">
-                        <p class="text-[10px] uppercase font-bold text-slate-400">মোট মূল্য:</p>
+                        <p class="text-[10px] uppercase font-bold text-slate-400">মূল্য:</p>
                         <span id="checkoutProductPrice" class="text-base font-black text-bkash">৳০</span>
                     </div>
                 </div>
 
+                <!-- Step-by-step bKash Instructions -->
                 <div class="bg-pink-50/70 border border-pink-200 p-4 rounded-xl space-y-2 text-xs text-slate-700">
                     <p class="font-bold text-slate-900 flex items-center gap-1.5">
-                        <i class="fa-solid fa-shield-halved text-bkash"></i> পেমেন্ট প্রসেস:
+                        <i class="fa-solid fa-circle-info text-bkash"></i> টাকা পাঠানোর নিয়মাবলী:
                     </p>
-                    <ul class="list-disc pl-4 space-y-1 text-[11px] leading-relaxed text-slate-600">
-                        <li>নিচের বাটনে চাপ দিলে অটোমেটিক পেমেন্ট পেজে চলে যাবেন।</li>
-                        <li>বিকাশ বা নগদ পিন দিয়ে দ্রুত পেমেন্ট সম্পন্ন করতে পারবেন।</li>
-                        <li>পেমেন্ট শেষ হওয়া মাত্রই সরাসরি PDF ফাইল ডাউনলোড করতে পারবেন।</li>
-                    </ul>
+                    <ol class="list-decimal pl-4 space-y-1 text-[11px] leading-relaxed text-slate-600">
+                        <li>আপনার বিকাশ অ্যাপ বা *247# এ গিয়ে <strong class="text-bkash">Send Money</strong> সিলেক্ট করুন।</li>
+                        <li>নিচের নম্বরে ঠিক <strong id="checkoutPriceNotice" class="text-bkash">৳০</strong> টাকা সেন্ড মানি করুন।</li>
+                        <li>টাকা পাঠানো শেষে নিচে আপনার **বিকাশ মোবাইল নম্বর** ও **TrxID** দিয়ে অর্ডার সম্পন্ন করুন।</li>
+                    </ol>
+
+                    <!-- bKash Number Display Box -->
+                    <div class="mt-3 bg-white p-3 rounded-xl border border-pink-200 flex items-center justify-between shadow-sm">
+                        <div>
+                            <span id="checkoutBkashType" class="text-[10px] text-slate-400 font-bold block">বিকাশ পার্সোনাল নম্বর:</span>
+                            <span id="checkoutBkashNumber" class="text-base font-black tracking-wider text-slate-900">01700000000</span>
+                        </div>
+                        <button onclick="copyBkashNumber()" class="bg-bkash/10 hover:bg-bkash/20 text-bkash font-bold px-3 py-1.5 rounded-lg text-xs transition flex items-center gap-1">
+                            <i class="fa-solid fa-copy"></i> কপি
+                        </button>
+                    </div>
                 </div>
 
-                <button onclick="proceedToAutoPayment()" id="autoPayBtn" class="w-full py-3.5 bg-bkash hover:bg-pink-700 text-white font-bold text-sm rounded-xl shadow-lg shadow-pink-500/20 transition active:scale-95 flex items-center justify-center gap-2">
-                    <i class="fa-solid fa-lock"></i> সরাসরি পেমেন্ট গেটওয়েতে যান
-                </button>
+                <!-- Order Form -->
+                <form id="orderForm" onsubmit="submitOrder(event)" class="space-y-3 pt-1">
+                    <div>
+                        <label class="block text-xs font-bold text-slate-700 mb-1">আপনার বিকাশ মোবাইল নম্বর *</label>
+                        <input type="tel" id="custBkashNo" required placeholder="017XXXXXXXX" pattern="[0-9]{11}"
+                            class="w-full px-3 py-2.5 bg-white border border-slate-300 rounded-xl text-xs focus:ring-2 focus:ring-bkash focus:outline-none">
+                    </div>
+
+                    <div>
+                        <label class="block text-xs font-bold text-slate-700 mb-1">বিকাশ ট্রানজেকশন আইডি (TrxID) *</label>
+                        <input type="text" id="custTrxId" required placeholder="যেমন: 9J7A2K8LM" 
+                            class="w-full px-3 py-2.5 bg-white border border-slate-300 rounded-xl text-xs font-mono uppercase focus:ring-2 focus:ring-bkash focus:outline-none">
+                        <p class="text-[10px] text-slate-400 mt-0.5">বিকাশ মেসেজে আসা ৮-১০ ডিজিটের TrxID টি দিন</p>
+                    </div>
+
+                    <button type="submit" class="w-full py-3 bg-bkash hover:bg-pink-700 text-white font-bold text-xs rounded-xl shadow-lg shadow-pink-500/20 transition active:scale-95 flex items-center justify-center gap-2 mt-2">
+                        <i class="fa-solid fa-paper-plane"></i> অর্ডার প্লেস করুন
+                    </button>
+                </form>
             </div>
         </div>
     </div>
@@ -359,11 +387,14 @@
 
             <!-- Admin Navigation Tabs -->
             <div class="bg-white border-b border-slate-200 px-4 flex items-center gap-2 overflow-x-auto hide-scrollbar">
-                <button onclick="switchAdminTab('products')" id="adminTab-products" class="admin-tab px-4 py-3 text-xs font-bold border-b-2 border-brand-600 text-brand-600 whitespace-nowrap">
+                <button onclick="switchAdminTab('orders')" id="adminTab-orders" class="admin-tab px-4 py-3 text-xs font-bold border-b-2 border-brand-600 text-brand-600 whitespace-nowrap">
+                    <i class="fa-solid fa-cart-shopping mr-1"></i> অর্ডারসমূহ (<span id="adminPendingCount">০</span>)
+                </button>
+                <button onclick="switchAdminTab('products')" id="adminTab-products" class="admin-tab px-4 py-3 text-xs font-bold border-b-2 border-transparent text-slate-500 hover:text-slate-800 whitespace-nowrap">
                     <i class="fa-solid fa-file-pdf mr-1"></i> পিডিএফ পরিচালনা
                 </button>
                 <button onclick="switchAdminTab('settings')" id="adminTab-settings" class="admin-tab px-4 py-3 text-xs font-bold border-b-2 border-transparent text-slate-500 hover:text-slate-800 whitespace-nowrap">
-                    <i class="fa-solid fa-gear mr-1"></i> এডমিন নিরাপত্তা সেটিংস
+                    <i class="fa-solid fa-gear mr-1"></i> বিকাশ ও সেটিংস
                 </button>
                 <button onclick="switchAdminTab('guide')" id="adminTab-guide" class="admin-tab px-4 py-3 text-xs font-bold border-b-2 border-transparent text-slate-500 hover:text-slate-800 whitespace-nowrap">
                     <i class="fa-solid fa-mobile-screen-button mr-1"></i> মোবাইল ব্যবহারের নিয়ম
@@ -373,8 +404,39 @@
             <!-- Admin Content Container -->
             <div class="p-4 sm:p-6 overflow-y-auto flex-1 space-y-6">
 
-                <!-- TAB: PRODUCTS MANAGEMENT -->
-                <div id="adminSection-products" class="space-y-6">
+                <!-- TAB 1: ORDERS MANAGEMENT -->
+                <div id="adminSection-orders" class="space-y-4">
+                    <div class="flex items-center justify-between">
+                        <h4 class="text-sm font-bold text-slate-800">গ্রাহকদের বিকাশে প্রাপ্ত অর্ডারসমূহ</h4>
+                        <button onclick="renderAdminOrders()" class="text-xs bg-slate-200 hover:bg-slate-300 text-slate-700 font-semibold px-3 py-1.5 rounded-lg transition">
+                            <i class="fa-solid fa-rotate-right mr-1"></i> রিফ্রেশ
+                        </button>
+                    </div>
+
+                    <div class="bg-white rounded-xl border border-slate-200 shadow-sm overflow-hidden">
+                        <div class="overflow-x-auto">
+                            <table class="w-full text-left text-xs text-slate-600">
+                                <thead class="bg-slate-50 text-slate-700 font-bold border-b border-slate-200">
+                                    <tr>
+                                        <th class="p-3">তারিখ</th>
+                                        <th class="p-3">গ্রাহকের বিকাশ</th>
+                                        <th class="p-3">পিডিএফ সমাধান</th>
+                                        <th class="p-3">মূল্য</th>
+                                        <th class="p-3">TrxID</th>
+                                        <th class="p-3">স্ট্যাটাস</th>
+                                        <th class="p-3 text-right">অ্যাকশন</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="adminOrdersTable" class="divide-y divide-slate-100">
+                                    <!-- Dynamic injection -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- TAB 2: PRODUCTS MANAGEMENT -->
+                <div id="adminSection-products" class="space-y-6 hidden">
                     <!-- Add / Edit PDF Form -->
                     <div class="bg-white p-4 sm:p-5 rounded-xl border border-slate-200 shadow-sm">
                         <h4 id="productFormTitle" class="text-sm font-bold text-slate-800 mb-3 pb-2 border-b border-slate-100">
@@ -448,12 +510,23 @@
                     </div>
                 </div>
 
-                <!-- TAB: SETTINGS -->
+                <!-- TAB 3: BKASH & SETTINGS -->
                 <div id="adminSection-settings" class="space-y-4 hidden max-w-xl">
                     <div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm space-y-4">
-                        <h4 class="text-sm font-bold text-slate-800 border-b pb-2">এডমিন নিরাপত্তা সেটিংস</h4>
+                        <h4 class="text-sm font-bold text-slate-800 border-b pb-2">বিকাশ ও এডমিন নিরাপত্তা সেটিংস</h4>
                         
                         <form onsubmit="saveSettings(event)" class="space-y-4">
+                            <div>
+                                <label class="block text-xs font-bold text-slate-700 mb-1">আপনার বিকাশ পেমেন্ট নম্বর</label>
+                                <input type="text" id="settingBkashNo" required class="w-full px-3 py-2.5 border rounded-xl text-xs font-mono font-bold">
+                                <p class="text-[10px] text-slate-400 mt-0.5">যে নম্বরে গ্রাহকরা সেন্ড মানি করবেন</p>
+                            </div>
+
+                            <div>
+                                <label class="block text-xs font-bold text-slate-700 mb-1">অ্যাকাউন্টের ধরন / নির্দেশনা</label>
+                                <input type="text" id="settingBkashType" required placeholder="যেমন: পার্সোনাল সেন্ড মানি" class="w-full px-3 py-2.5 border rounded-xl text-xs">
+                            </div>
+
                             <div>
                                 <label class="block text-xs font-bold text-slate-700 mb-1">এডমিন পিন নম্বর পরিবর্তন (PIN)</label>
                                 <input type="password" id="settingAdminPin" required minlength="4" class="w-full px-3 py-2.5 border rounded-xl text-xs font-mono">
@@ -466,7 +539,7 @@
                     </div>
                 </div>
 
-                <!-- TAB: MOBILE OPERATING GUIDE -->
+                <!-- TAB 4: MOBILE OPERATING GUIDE -->
                 <div id="adminSection-guide" class="space-y-4 hidden">
                     <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm space-y-6 text-xs text-slate-700 leading-relaxed">
                         <div>
@@ -491,11 +564,31 @@
 
                             <!-- Step 2 -->
                             <div class="p-4 rounded-xl bg-slate-50 border border-slate-200 space-y-2">
-                                <span class="bg-emerald-600 text-white w-6 h-6 rounded-full inline-flex items-center justify-center font-bold text-xs">২</span>
+                                <span class="bg-bkash text-white w-6 h-6 rounded-full inline-flex items-center justify-center font-bold text-xs">২</span>
+                                <h4 class="font-bold text-slate-800 text-sm">বিকাশ পেমেন্ট যাচাই ও অনুমোদন</h4>
+                                <p class="text-slate-600">
+                                    ১. গ্রাহক অর্ডার করলে আপনার বিকাশ স্টেটমেন্ট বা SMS থেকে গ্রাহকের TrxID চেক করুন।<br>
+                                    ২. এডমিন প্যানেলের <strong>অর্ডারসমূহ</strong> ট্যাবে আসুন।<br>
+                                    ৩. টাকা জমা নিশ্চিত হলে <strong>"অনুমোদন করুন"</strong> চাপুন। অনুমোদনের সাথে সাথে গ্রাহক ওয়েবসাইটে নিজ নম্বরে ডাউনলোড লিংক পেয়ে যাবে।
+                                </p>
+                            </div>
+
+                            <!-- Step 3 -->
+                            <div class="p-4 rounded-xl bg-slate-50 border border-slate-200 space-y-2">
+                                <span class="bg-emerald-600 text-white w-6 h-6 rounded-full inline-flex items-center justify-center font-bold text-xs">৩</span>
                                 <h4 class="font-bold text-slate-800 text-sm">নতুন PDF যোগ ও মূল্য পরিবর্তন</h4>
                                 <p class="text-slate-600">
                                     ১. <strong>পিডিএফ পরিচালনা</strong> ট্যাবে গিয়ে শিরোনাম, লেখক, বিষয় ও দাম লিখে নতুন বই যোগ করুন।<br>
                                     ২. যেকোনো সময়ে যেকোনো পিডিএফের দাম বা ড্রাইভ লিংক পরিবর্তন করতে <strong>এডিট</strong> বাটনে চাপুন।
+                                </p>
+                            </div>
+
+                            <!-- Step 4 -->
+                            <div class="p-4 rounded-xl bg-slate-50 border border-slate-200 space-y-2">
+                                <span class="bg-purple-600 text-white w-6 h-6 rounded-full inline-flex items-center justify-center font-bold text-xs">৪</span>
+                                <h4 class="font-bold text-slate-800 text-sm">বিকাশ নম্বর আপডেট</h4>
+                                <p class="text-slate-600">
+                                    যদি আপনার বিকাশ নম্বর পরিবর্তন করতে চান, তবে <strong>বিকাশ ও সেটিংস</strong> ট্যাবে গিয়ে নতুন নম্বর বসিয়ে সেভ করুন। গ্রাহকরা তাৎক্ষণিকভাবে নতুন নম্বরটি পেমেন্ট স্ক্রিনে দেখতে পাবে।
                                 </p>
                             </div>
                         </div>
@@ -508,10 +601,6 @@
 
     <!-- Application JavaScript Logic -->
     <script>
-        // UddoktaPay Credentials
-        const UDDOKTAPAY_API_KEY = "pQZrNYYt1Vm1oTqXMgDZgONe77ScUh11WPURth6p";
-        const UDDOKTAPAY_URL = "https://zihan.paymently.io/api/checkout-v2";
-
         // Default Demo PDF Solutions Database
         const initialProducts = [
             {
@@ -599,11 +688,14 @@
 
         // Default Initial Settings
         const initialSettings = {
+            bkashNumber: "01700000000",
+            bkashType: "পার্সোনাল সেন্ড মানি (Send Money)",
             adminPin: "1234"
         };
 
         // State variables
         let products = [];
+        let orders = [];
         let settings = {};
         let activeSubject = 'ALL';
         let selectedProductForCheckout = null;
@@ -612,6 +704,9 @@
         function loadStorageData() {
             const storedProducts = localStorage.getItem('hsc_products');
             products = storedProducts ? JSON.parse(storedProducts) : initialProducts;
+
+            const storedOrders = localStorage.getItem('hsc_orders');
+            orders = storedOrders ? JSON.parse(storedOrders) : [];
 
             const storedSettings = localStorage.getItem('hsc_settings');
             settings = storedSettings ? JSON.parse(storedSettings) : initialSettings;
@@ -622,6 +717,10 @@
 
         function saveProductsToStorage() {
             localStorage.setItem('hsc_products', JSON.stringify(products));
+        }
+
+        function saveOrdersToStorage() {
+            localStorage.setItem('hsc_orders', JSON.stringify(orders));
         }
 
         function saveSettingsToStorage() {
@@ -738,8 +837,8 @@
                             <button onclick="openPreviewModal('${item.id}')" class="px-3 py-2 bg-slate-100 hover:bg-slate-200 text-slate-700 font-semibold text-xs rounded-xl transition">
                                 নমুনা
                             </button>
-                            <button onclick="startAutoPayment('${item.id}')" class="px-4 py-2 bg-bkash hover:bg-pink-700 text-white font-bold text-xs rounded-xl shadow-sm shadow-pink-500/20 transition active:scale-95 flex items-center gap-1.5">
-                                <i class="fa-solid fa-bolt"></i> কিনুন
+                            <button onclick="openCheckoutModal('${item.id}')" class="px-4 py-2 bg-brand-600 hover:bg-brand-700 text-white font-bold text-xs rounded-xl shadow-sm shadow-brand-500/20 transition active:scale-95 flex items-center gap-1.5">
+                                <i class="fa-solid fa-cart-shopping"></i> কিনুন
                             </button>
                         </div>
                     </div>
@@ -770,72 +869,135 @@
             const buyBtn = document.getElementById('previewBuyBtn');
             buyBtn.onclick = () => {
                 closeModal('previewModal');
-                startAutoPayment(productId);
+                openCheckoutModal(productId);
             };
 
             openModal('previewModal');
         }
 
-        // --- UddoktaPay Automated Payment Integration ---
-        async function startAutoPayment(productId) {
-            const product = products.find(p => p.id === productId);
-            if (!product) return;
-
-            showToast('পেমেন্ট গেটওয়েতে রিডাইরেক্ট করা হচ্ছে...', 'success');
-
-            // Save info locally for success page
-            localStorage.setItem('pending_pdf_link', product.pdfUrl);
-            localStorage.setItem('pending_pdf_title', product.title);
-
-            const paymentData = {
-                full_name: "HSC Student",
-                email: "student@gmail.com",
-                amount: product.price,
-                metadata: {
-                    product_name: product.title
-                },
-                redirect_url: window.location.origin + "/success.html",
-                cancel_url: window.location.href,
-                webhook_url: window.location.origin + "/webhook"
-            };
-
-            try {
-                const response = await fetch(UDDOKTAPAY_URL, {
-                    method: "POST",
-                    headers: {
-                        "Content-Type": "application/json",
-                        "RT-UDDOKTAPAY-API-KEY": UDDOKTAPAY_API_KEY
-                    },
-                    body: JSON.stringify(paymentData)
-                });
-
-                const data = await response.json();
-
-                if (data.status && data.payment_url) {
-                    window.location.href = data.payment_url;
-                } else {
-                    showToast("পেমেন্ট গেটওয়েতে সমস্যা: " + (data.message || "আবার চেষ্টা করুন"), "error");
-                }
-            } catch (error) {
-                console.error("Payment Error:", error);
-                showToast("পেমেন্ট সার্ভারে সংযোগ স্থাপন করা সম্ভব হয়নি।", "error");
-            }
-        }
-
+        // --- Checkout Modal & bKash Flow ---
         function openCheckoutModal(productId) {
             selectedProductForCheckout = products.find(p => p.id === productId);
             if (!selectedProductForCheckout) return;
 
             document.getElementById('checkoutProductTitle').textContent = selectedProductForCheckout.title;
             document.getElementById('checkoutProductPrice').textContent = `৳${selectedProductForCheckout.price}`;
+            document.getElementById('checkoutPriceNotice').textContent = `৳${selectedProductForCheckout.price}`;
+            
+            document.getElementById('checkoutBkashNumber').textContent = settings.bkashNumber || '01700000000';
+            document.getElementById('checkoutBkashType').textContent = `বিকাশ ${settings.bkashType || 'পার্সোনাল'} নম্বর:`;
+
+            document.getElementById('orderForm').reset();
             openModal('checkoutModal');
         }
 
-        function proceedToAutoPayment() {
-            if (selectedProductForCheckout) {
-                closeModal('checkoutModal');
-                startAutoPayment(selectedProductForCheckout.id);
+        function copyBkashNumber() {
+            const num = settings.bkashNumber || '01700000000';
+            
+            // Clipboard fallback
+            if(navigator.clipboard && navigator.clipboard.writeText) {
+                navigator.clipboard.writeText(num);
+            } else {
+                const tempInput = document.createElement("input");
+                tempInput.value = num;
+                document.body.appendChild(tempInput);
+                tempInput.select();
+                document.execCommand("copy");
+                document.body.removeChild(tempInput);
             }
+            
+            showToast('বিকাশ নম্বর কপি করা হয়েছে!');
+        }
+
+        function submitOrder(e) {
+            e.preventDefault();
+            if (!selectedProductForCheckout) return;
+
+            const phone = document.getElementById('custBkashNo').value.trim();
+            const trxId = document.getElementById('custTrxId').value.trim().toUpperCase();
+
+            const newOrder = {
+                id: 'ORD-' + Math.floor(100000 + Math.random() * 900000),
+                date: new Date().toLocaleString('bn-BD', { dateStyle: 'medium', timeStyle: 'short' }),
+                customerPhone: phone,
+                trxId: trxId,
+                productId: selectedProductForCheckout.id,
+                productTitle: selectedProductForCheckout.title,
+                price: selectedProductForCheckout.price,
+                pdfUrl: selectedProductForCheckout.pdfUrl,
+                status: 'pending' // pending, approved, rejected
+            };
+
+            orders.unshift(newOrder);
+            saveOrdersToStorage();
+
+            closeModal('checkoutModal');
+            showToast('আপনার অর্ডারটি সফলভাবে জমা নেওয়া হয়েছে!');
+            
+            // Auto open tracking modal with submitted TrxID
+            document.getElementById('trackInput').value = trxId;
+            openModal('trackOrderModal');
+            searchOrderStatus();
+        }
+
+        // --- Order Tracking Logic ---
+        function searchOrderStatus() {
+            const query = document.getElementById('trackInput').value.trim().toLowerCase();
+            const container = document.getElementById('trackResults');
+
+            if (!query) {
+                container.innerHTML = '<div class="text-center py-6 text-slate-400 text-xs">অনুগ্রহ করে বিকাশ ফোন নম্বর বা TrxID দিন।</div>';
+                return;
+            }
+
+            const results = orders.filter(o => 
+                o.customerPhone.toLowerCase().includes(query) || 
+                o.trxId.toLowerCase().includes(query)
+            );
+
+            if (results.length === 0) {
+                container.innerHTML = `
+                    <div class="text-center py-8 text-slate-500 text-xs bg-slate-50 rounded-xl">
+                        <i class="fa-solid fa-circle-exclamation text-amber-500 text-2xl mb-2"></i>
+                        <p class="font-bold text-slate-700">কোনো তথ্য পাওয়া যায়নি!</p>
+                        <p class="mt-1">নম্বর বা TrxID সঠিক আছে কিনা পুনরায় চেক করুন।</p>
+                    </div>`;
+                return;
+            }
+
+            container.innerHTML = results.map(order => {
+                let statusBadge = '';
+                let actionArea = '';
+
+                if (order.status === 'pending') {
+                    statusBadge = `<span class="bg-amber-100 text-amber-700 font-bold px-2 py-0.5 rounded-full text-[10px]"><i class="fa-solid fa-clock mr-1"></i>অপেক্ষমান</span>`;
+                    actionArea = `<p class="text-[11px] text-amber-700 bg-amber-50 p-2 rounded-lg border border-amber-200">এডমিন পেমেন্ট ট্রানজেকশন যাচাই করছেন। অনুমোদন হলে এখানেই ডাউনলোড লিংক পাবেন।</p>`;
+                } else if (order.status === 'approved') {
+                    statusBadge = `<span class="bg-emerald-100 text-emerald-700 font-bold px-2 py-0.5 rounded-full text-[10px]"><i class="fa-solid fa-circle-check mr-1"></i>অনুমোদিত</span>`;
+                    actionArea = `
+                        <a href="${order.pdfUrl}" target="_blank" class="w-full py-2.5 bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs rounded-xl flex items-center justify-center gap-2 shadow-md transition">
+                            <i class="fa-solid fa-download"></i> সলিউশন PDF ডাউনলোড করুন
+                        </a>`;
+                } else {
+                    statusBadge = `<span class="bg-red-100 text-red-700 font-bold px-2 py-0.5 rounded-full text-[10px]"><i class="fa-solid fa-circle-xmark mr-1"></i>বাতিলকৃত</span>`;
+                    actionArea = `<p class="text-[11px] text-red-600 bg-red-50 p-2 rounded-lg border border-red-200">সঠিক ট্রানজেকশন না পাওয়ায় অর্ডারটি বাতিল করা হয়েছে। প্রয়োজনে এডমিনের সাথে যোগাযোগ করুন।</p>`;
+                }
+
+                return `
+                    <div class="bg-slate-50 p-3.5 rounded-xl border border-slate-200 space-y-2 text-xs">
+                        <div class="flex justify-between items-start">
+                            <div>
+                                <h5 class="font-bold text-slate-800">${order.productTitle}</h5>
+                                <p class="text-[10px] text-slate-400">তারিখ: ${order.date} | TrxID: <span class="font-mono font-bold text-slate-600">${order.trxId}</span></p>
+                            </div>
+                            ${statusBadge}
+                        </div>
+                        <div class="pt-1">
+                            ${actionArea}
+                        </div>
+                    </div>
+                `;
+            }).join('');
         }
 
         // --- Admin PIN Verification ---
@@ -860,9 +1022,10 @@
 
         // --- Admin Dashboard Logic ---
         function openAdminDashboard() {
+            renderAdminOrders();
             renderAdminProducts();
             loadAdminSettings();
-            switchAdminTab('products');
+            switchAdminTab('orders');
             openModal('adminModal');
         }
 
@@ -872,6 +1035,7 @@
             });
             document.getElementById(`adminTab-${tabName}`).className = "admin-tab px-4 py-3 text-xs font-bold border-b-2 border-brand-600 text-brand-600 whitespace-nowrap";
 
+            document.getElementById('adminSection-orders').classList.add('hidden');
             document.getElementById('adminSection-products').classList.add('hidden');
             document.getElementById('adminSection-settings').classList.add('hidden');
             document.getElementById('adminSection-guide').classList.add('hidden');
@@ -879,7 +1043,57 @@
             document.getElementById(`adminSection-${tabName}`).classList.remove('hidden');
         }
 
-        // Admin Tab 1: Products Management
+        // Admin Tab 1: Render Orders
+        function renderAdminOrders() {
+            const tbody = document.getElementById('adminOrdersTable');
+            const pendingCount = orders.filter(o => o.status === 'pending').length;
+            document.getElementById('adminPendingCount').textContent = pendingCount;
+
+            if (orders.length === 0) {
+                tbody.innerHTML = `<tr><td colspan="7" class="text-center py-6 text-slate-400">এখনো কোনো অর্ডার আসেনি!</td></tr>`;
+                return;
+            }
+
+            tbody.innerHTML = orders.map(order => {
+                let statusTag = '';
+                if(order.status === 'pending') statusTag = '<span class="bg-amber-100 text-amber-700 px-2 py-0.5 rounded font-bold">পেন্ডিং</span>';
+                else if(order.status === 'approved') statusTag = '<span class="bg-emerald-100 text-emerald-700 px-2 py-0.5 rounded font-bold">অনুমোদিত</span>';
+                else statusTag = '<span class="bg-red-100 text-red-700 px-2 py-0.5 rounded font-bold">বাতিল</span>';
+
+                return `
+                    <tr class="hover:bg-slate-50 border-b border-slate-100">
+                        <td class="p-3 text-[11px] text-slate-400">${order.date}</td>
+                        <td class="p-3 font-bold text-slate-800">${order.customerPhone}</td>
+                        <td class="p-3 font-medium text-slate-700 max-w-xs truncate">${order.productTitle}</td>
+                        <td class="p-3 font-bold text-bkash">৳${order.price}</td>
+                        <td class="p-3 font-mono font-bold text-slate-800">${order.trxId}</td>
+                        <td class="p-3">${statusTag}</td>
+                        <td class="p-3 text-right space-x-1">
+                            ${order.status !== 'approved' ? `
+                                <button onclick="updateOrderStatus('${order.id}', 'approved')" class="bg-emerald-600 text-white text-[11px] px-2.5 py-1 rounded-lg font-bold hover:bg-emerald-700 transition">
+                                    অনুমোদন
+                                </button>` : ''}
+                            ${order.status !== 'rejected' ? `
+                                <button onclick="updateOrderStatus('${order.id}', 'rejected')" class="bg-slate-200 text-slate-700 text-[11px] px-2.5 py-1 rounded-lg font-semibold hover:bg-red-100 hover:text-red-600 transition">
+                                    বাতিল
+                                </button>` : ''}
+                        </td>
+                    </tr>
+                `;
+            }).join('');
+        }
+
+        function updateOrderStatus(orderId, status) {
+            const order = orders.find(o => o.id === orderId);
+            if (!order) return;
+
+            order.status = status;
+            saveOrdersToStorage();
+            renderAdminOrders();
+            showToast(status === 'approved' ? 'অর্ডারটি অনুমোদন করা হয়েছে!' : 'অর্ডারটি বাতিল করা হয়েছে');
+        }
+
+        // Admin Tab 2: Products Management
         function renderAdminProducts() {
             const tbody = document.getElementById('adminProductsTable');
             tbody.innerHTML = products.map(prod => `
@@ -975,13 +1189,17 @@
             document.getElementById('productFormTitle').textContent = 'নতুন PDF সলিউশন যোগ করুন';
         }
 
-        // Admin Tab 2: Settings
+        // Admin Tab 3: Settings
         function loadAdminSettings() {
+            document.getElementById('settingBkashNo').value = settings.bkashNumber || '';
+            document.getElementById('settingBkashType').value = settings.bkashType || '';
             document.getElementById('settingAdminPin').value = settings.adminPin || '1234';
         }
 
         function saveSettings(e) {
             e.preventDefault();
+            settings.bkashNumber = document.getElementById('settingBkashNo').value.trim();
+            settings.bkashType = document.getElementById('settingBkashType').value.trim();
             settings.adminPin = document.getElementById('settingAdminPin').value.trim();
 
             saveSettingsToStorage();
@@ -990,3 +1208,4 @@
     </script>
 </body>
 </html>
+```
