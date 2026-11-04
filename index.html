@@ -75,7 +75,7 @@
                     </div>
                 </div>
 
-                <!-- Right Action Buttons (Admin Panel visible for everyone as requested) -->
+                <!-- Right Action Buttons -->
                 <div class="flex items-center space-x-2 sm:space-x-3">
                     <button onclick="openModal('trackOrderModal')" class="flex items-center gap-2 bg-slate-800 hover:bg-slate-700 text-slate-200 px-3.5 py-2 sm:px-4 sm:py-2.5 rounded-xl text-xs sm:text-sm font-bold transition active:scale-95 border border-slate-700">
                         <i class="fa-solid fa-magnifying-glass text-brand-400"></i>
@@ -137,7 +137,7 @@
                         <div class="w-9 h-9 rounded-xl bg-cyan-100 text-cyan-600 flex items-center justify-center shrink-0 font-bold"><i class="fa-solid fa-bolt"></i></div>
                         <div>
                             <h4 class="text-xs font-bold text-slate-900">বিকাশ অটো ভেরিফিকেশন</h4>
-                            <p class="text-[11px] text-slate-500">পেমেন্ট অনুমোদনের সাথে সাথেই লিংক</p>
+                            <p class="text-[11px] text-slate-500">পেমেন্ট অনুমোদনের সাথে সাথেই লিংক</p>
                         </div>
                     </div>
 
@@ -539,6 +539,12 @@
                         </h4>
                         <form id="productForm" onsubmit="saveProduct(event)" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3.5">
                             <input type="hidden" id="editProductId" value="">
+
+                            <!-- Serial Number Field -->
+                            <div>
+                                <label class="block text-[11px] font-bold text-slate-400 mb-1">সিরিয়াল নম্বর (Serial No) *</label>
+                                <input type="number" id="prodSerial" min="1" value="1" required placeholder="যেমন: 1, 2, 3" class="w-full px-3.5 py-2.5 bg-slate-900 border border-slate-700 rounded-xl text-xs text-white font-medium focus:ring-2 focus:ring-brand-500 focus:outline-none">
+                            </div>
                             
                             <div>
                                 <label class="block text-[11px] font-bold text-slate-400 mb-1">অধ্যায়/পিডিএফ শিরোনাম *</label>
@@ -589,12 +595,13 @@
 
                     <div class="bg-slate-950 rounded-2xl border border-slate-800 shadow-sm overflow-hidden">
                         <div class="p-3.5 bg-slate-900 border-b border-slate-800 font-extrabold text-xs text-slate-300">
-                            বর্তমান পিডিএফের তালিকা
+                            বর্তমান পিডিএফের তালিকা (সিরিয়াল অনুযায়ী)
                         </div>
                         <div class="overflow-x-auto">
                             <table class="w-full text-left text-xs text-slate-300">
                                 <thead class="bg-slate-900 text-slate-400 font-bold">
                                     <tr>
+                                        <th class="p-3.5">সিরিয়াল</th>
                                         <th class="p-3.5">বিষয়/ক্যাটাগরি</th>
                                         <th class="p-3.5">শিরোনাম</th>
                                         <th class="p-3.5">লেখক</th>
@@ -693,10 +700,11 @@
 
     <!-- Application JavaScript Logic -->
     <script>
-        // Default Demo PDF Solutions Database (Includes Full Book Packages)
+        // Default Demo PDF Solutions Database with Serial numbers
         const initialProducts = [
             {
                 id: "p0",
+                serial: 1,
                 subject: "পূর্ণাঙ্গ বই বান্ডেল",
                 title: "উচ্চতর গণিত ১ম পত্র - সকল অধ্যায়ের পূর্ণাঙ্গ সমাধান (Full Book)",
                 writer: "কেতাব উদ্দীন",
@@ -707,6 +715,7 @@
             },
             {
                 id: "p1",
+                serial: 2,
                 subject: "পদার্থবিজ্ঞান",
                 title: "১ম পত্র: ১ম অধ্যায় - ভেক্টর পূর্ণাঙ্গ সলিউশন",
                 writer: "ড. শাহজাহান তপন",
@@ -717,6 +726,7 @@
             },
             {
                 id: "p2",
+                serial: 3,
                 subject: "রসায়ন",
                 title: "১ম পত্র: ২য় অধ্যায় - গুণগত রসায়ন (ফ্রি নোট)",
                 writer: "হাজারী ও নাগ",
@@ -818,14 +828,17 @@
             setSubjectFilter('ALL');
         }
 
-        // --- Render Catalog Grid ---
+        // --- Render Catalog Grid (Sorted by Serial No: 1, 2, 3...) ---
         function renderProducts() {
             const grid = document.getElementById('productGrid');
             const emptyState = document.getElementById('emptyState');
             const searchQuery = document.getElementById('searchInput').value.toLowerCase().trim();
             const writerQuery = document.getElementById('writerFilter').value;
 
-            const filtered = products.filter(item => {
+            // Sort products by serial number
+            const sortedProducts = [...products].sort((a, b) => (a.serial || 999) - (b.serial || 999));
+
+            const filtered = sortedProducts.filter(item => {
                 const matchesSubject = activeSubject === 'ALL' || item.subject === activeSubject;
                 const matchesWriter = writerQuery === 'ALL' || item.writer.includes(writerQuery);
                 const matchesSearch = item.title.toLowerCase().includes(searchQuery) || 
@@ -1211,8 +1224,12 @@
 
         function renderAdminProducts() {
             const tbody = document.getElementById('adminProductsTable');
-            tbody.innerHTML = products.map(prod => `
+            // Sort by Serial No in admin table
+            const sortedProducts = [...products].sort((a, b) => (a.serial || 999) - (b.serial || 999));
+
+            tbody.innerHTML = sortedProducts.map(prod => `
                 <tr class="hover:bg-slate-900/60 border-b border-slate-800 transition">
+                    <td class="p-3.5 font-mono font-black text-brand-400">#${prod.serial || 1}</td>
                     <td class="p-3.5"><span class="bg-brand-500/20 text-brand-300 text-[10px] font-bold px-2.5 py-1 rounded-md border border-brand-500/30">${prod.subject}</span></td>
                     <td class="p-3.5 font-bold text-white">${prod.title}</td>
                     <td class="p-3.5 font-semibold text-slate-400">${prod.writer}</td>
@@ -1228,6 +1245,7 @@
         function saveProduct(e) {
             e.preventDefault();
             const editId = document.getElementById('editProductId').value;
+            const serial = parseInt(document.getElementById('prodSerial').value) || 1;
             const title = document.getElementById('prodTitle').value.trim();
             const subject = document.getElementById('prodSubject').value;
             const writer = document.getElementById('prodWriter').value.trim();
@@ -1238,10 +1256,10 @@
 
             if (editId) {
                 const prod = products.find(p => p.id === editId);
-                if (prod) Object.assign(prod, { title, subject, writer, price, pdfUrl, demoUrl, description: desc });
+                if (prod) Object.assign(prod, { serial, title, subject, writer, price, pdfUrl, demoUrl, description: desc });
                 showToast('পিডিএফ সমাধান সফলভাবে আপডেট হয়েছে!');
             } else {
-                products.unshift({ id: 'p' + Date.now(), subject, title, writer, price, pdfUrl, demoUrl, description: desc });
+                products.push({ id: 'p' + Date.now(), serial, subject, title, writer, price, pdfUrl, demoUrl, description: desc });
                 showToast('নতুন উপাদান যোগ করা হয়েছে!');
             }
 
@@ -1256,6 +1274,7 @@
             if (!prod) return;
 
             document.getElementById('editProductId').value = prod.id;
+            document.getElementById('prodSerial').value = prod.serial || 1;
             document.getElementById('prodTitle').value = prod.title;
             document.getElementById('prodSubject').value = prod.subject;
             document.getElementById('prodWriter').value = prod.writer;
@@ -1281,6 +1300,7 @@
         function resetProductForm() {
             document.getElementById('editProductId').value = '';
             document.getElementById('productForm').reset();
+            document.getElementById('prodSerial').value = '1';
             document.getElementById('productFormTitle').textContent = 'নতুন PDF সলিউশন বা পূর্ণাঙ্গ বই যোগ করুন';
         }
 
