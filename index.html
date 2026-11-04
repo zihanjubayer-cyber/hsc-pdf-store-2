@@ -253,7 +253,7 @@
                 <div class="bg-gradient-to-br from-brand-50/80 to-slate-50 p-4.5 rounded-2xl border border-brand-100/80 space-y-2.5">
                     <div class="flex justify-between items-center">
                         <span class="text-xs text-slate-600 font-semibold">মূল্য (Price):</span>
-                        <span id="previewPrice" class="text-2xl font-black text-brand-600">৳০</span>
+                        <div id="previewPrice" class="text-2xl font-black text-brand-600">৳০</div>
                     </div>
                     <div class="flex justify-between items-center border-t border-slate-200/50 pt-2">
                         <span class="text-xs text-slate-600 font-semibold">ফাইল ফরম্যাট:</span>
@@ -312,7 +312,7 @@
                     </div>
                     <div class="text-right">
                         <p class="text-[10px] uppercase font-bold text-slate-400">মূল্য:</p>
-                        <span id="checkoutProductPrice" class="text-lg font-black text-bkash">৳০</span>
+                        <div id="checkoutProductPrice" class="text-lg font-black text-bkash">৳০</div>
                     </div>
                 </div>
 
@@ -566,8 +566,15 @@
                                 <input type="text" id="prodWriter" required placeholder="যেমন: কেতাব উদ্দীন" class="w-full px-3.5 py-2.5 bg-slate-900 border border-slate-700 rounded-xl text-xs text-white font-medium focus:ring-2 focus:ring-brand-500 focus:outline-none">
                             </div>
 
+                            <!-- Regular Price (Kaata Dam) -->
                             <div>
-                                <label class="block text-[11px] font-bold text-slate-400 mb-1">মূল্য (টাকা) * [ফ্রি করতে 0 দিন]</label>
+                                <label class="block text-[11px] font-bold text-slate-400 mb-1">পূর্বের/রেগুলার দাম (কাটা দাম) ৳</label>
+                                <input type="number" id="prodRegularPrice" min="0" placeholder="যেমন: ৩০০ (খালি রাখলে দেখাবে না)" class="w-full px-3.5 py-2.5 bg-slate-900 border border-slate-700 rounded-xl text-xs text-white font-medium focus:ring-2 focus:ring-brand-500 focus:outline-none">
+                            </div>
+
+                            <!-- Offer / Selling Price -->
+                            <div>
+                                <label class="block text-[11px] font-bold text-slate-400 mb-1">বর্তমান অফার মূল্য (টাকা) *</label>
                                 <input type="number" id="prodPrice" min="0" required placeholder="যেমন: ১৫০ বা ০" class="w-full px-3.5 py-2.5 bg-slate-900 border border-slate-700 rounded-xl text-xs text-white font-medium focus:ring-2 focus:ring-brand-500 focus:outline-none">
                             </div>
 
@@ -605,7 +612,7 @@
                                         <th class="p-3.5">বিষয়/ক্যাটাগরি</th>
                                         <th class="p-3.5">শিরোনাম</th>
                                         <th class="p-3.5">লেখক</th>
-                                        <th class="p-3.5">দাম</th>
+                                        <th class="p-3.5">দাম (অফার/রেগুলার)</th>
                                         <th class="p-3.5 text-right">অ্যাকশন</th>
                                     </tr>
                                 </thead>
@@ -700,7 +707,7 @@
 
     <!-- Application JavaScript Logic -->
     <script>
-        // Default Demo PDF Solutions Database with Serial numbers
+        // Default Demo PDF Solutions Database with Serial numbers & Regular Prices
         const initialProducts = [
             {
                 id: "p0",
@@ -708,6 +715,7 @@
                 subject: "পূর্ণাঙ্গ বই বান্ডেল",
                 title: "উচ্চতর গণিত ১ম পত্র - সকল অধ্যায়ের পূর্ণাঙ্গ সমাধান (Full Book)",
                 writer: "কেতাব উদ্দীন",
+                regularPrice: 300,
                 price: 150,
                 pdfUrl: "https://drive.google.com/file/d/1demo_ketab_full/view",
                 demoUrl: "",
@@ -719,6 +727,7 @@
                 subject: "পদার্থবিজ্ঞান",
                 title: "১ম পত্র: ১ম অধ্যায় - ভেক্টর পূর্ণাঙ্গ সলিউশন",
                 writer: "ড. শাহজাহান তপন",
+                regularPrice: 50,
                 price: 25,
                 pdfUrl: "https://drive.google.com/file/d/1demo_vector_tapan/view",
                 demoUrl: "",
@@ -730,6 +739,7 @@
                 subject: "রসায়ন",
                 title: "১ম পত্র: ২য় অধ্যায় - গুণগত রসায়ন (ফ্রি নোট)",
                 writer: "হাজারী ও নাগ",
+                regularPrice: 0,
                 price: 0,
                 pdfUrl: "https://drive.google.com/file/d/1demo_hazari_free/view",
                 demoUrl: "",
@@ -859,9 +869,21 @@
             emptyState.classList.add('hidden');
             grid.innerHTML = filtered.map(item => {
                 const isFullBook = item.subject === 'পূর্ণাঙ্গ বই বান্ডেল';
-                const priceTag = item.price === 0 
-                    ? `<span class="text-base sm:text-lg font-black text-emerald-600">বিনামূল্যে (FREE)</span>`
-                    : `<span class="text-xl sm:text-2xl font-black text-slate-900">৳${item.price}</span>`;
+                
+                // Price display with Regular Price (Kaata Dam) if available and greater than selling price
+                let priceTag = '';
+                if (item.price === 0) {
+                    priceTag = `<span class="text-base sm:text-lg font-black text-emerald-600">বিনামূল্যে (FREE)</span>`;
+                } else if (item.regularPrice && item.regularPrice > item.price) {
+                    priceTag = `
+                        <div class="flex items-center gap-2">
+                            <span class="text-xs sm:text-sm font-bold text-slate-400 line-through">৳${item.regularPrice}</span>
+                            <span class="text-xl sm:text-2xl font-black text-slate-900">৳${item.price}</span>
+                        </div>
+                    `;
+                } else {
+                    priceTag = `<span class="text-xl sm:text-2xl font-black text-slate-900">৳${item.price}</span>`;
+                }
 
                 const subjectBadge = isFullBook 
                     ? `<span class="px-3 py-1 rounded-full text-[10px] font-extrabold bg-amber-100 text-amber-800 border border-amber-200"><i class="fa-solid fa-box-archive text-amber-600 mr-1"></i>ফুল বই সলিউশন</span>`
@@ -917,7 +939,16 @@
             document.getElementById('previewSubjectBadge').textContent = product.subject;
             document.getElementById('previewTitle').textContent = product.title;
             document.getElementById('previewWriter').textContent = `লেখক/প্রকাশনী: ${product.writer}`;
-            document.getElementById('previewPrice').textContent = product.price === 0 ? 'বিনামূল্যে (FREE)' : `৳${product.price}`;
+            
+            let previewPriceHtml = '';
+            if (product.price === 0) {
+                previewPriceHtml = 'বিনামূল্যে (FREE)';
+            } else if (product.regularPrice && product.regularPrice > product.price) {
+                previewPriceHtml = `<span class="text-sm font-bold text-slate-400 line-through mr-2">৳${product.regularPrice}</span> <span>৳${product.price}</span>`;
+            } else {
+                previewPriceHtml = `৳${product.price}`;
+            }
+            document.getElementById('previewPrice').innerHTML = previewPriceHtml;
             document.getElementById('previewDescription').innerHTML = product.description || 'এই পিডিএফে রয়েছে অধ্যায়ের সকল গুরুত্বপূর্ণ উদাহরণ ও মূল বইয়ের অনুশীলনী সমাধান।';
             
             const demoContainer = document.getElementById('demoViewerContainer');
@@ -1227,19 +1258,22 @@
             // Sort by Serial No in admin table
             const sortedProducts = [...products].sort((a, b) => (a.serial || 999) - (b.serial || 999));
 
-            tbody.innerHTML = sortedProducts.map(prod => `
-                <tr class="hover:bg-slate-900/60 border-b border-slate-800 transition">
-                    <td class="p-3.5 font-mono font-black text-brand-400">#${prod.serial || 1}</td>
-                    <td class="p-3.5"><span class="bg-brand-500/20 text-brand-300 text-[10px] font-bold px-2.5 py-1 rounded-md border border-brand-500/30">${prod.subject}</span></td>
-                    <td class="p-3.5 font-bold text-white">${prod.title}</td>
-                    <td class="p-3.5 font-semibold text-slate-400">${prod.writer}</td>
-                    <td class="p-3.5 font-black ${prod.price === 0 ? 'text-emerald-400' : 'text-white'}">${prod.price === 0 ? 'FREE (৳০)' : '৳' + prod.price}</td>
-                    <td class="p-3.5 text-right space-x-1">
-                        <button onclick="editProduct('${prod.id}')" class="bg-slate-800 hover:bg-slate-700 text-slate-200 text-[11px] px-3 py-1.5 rounded-lg font-bold transition border border-slate-700">এডিট</button>
-                        <button onclick="deleteProduct('${prod.id}')" class="bg-red-950/60 hover:bg-red-900/80 text-red-400 text-[11px] px-3 py-1.5 rounded-lg font-bold transition border border-red-800/50">মুছুন</button>
-                    </td>
-                </tr>
-            `).join('');
+            tbody.innerHTML = sortedProducts.map(prod => {
+                const regPriceStr = (prod.regularPrice && prod.regularPrice > prod.price) ? `<span class="text-slate-400 line-through text-[11px] mr-1">৳${prod.regularPrice}</span>` : '';
+                return `
+                    <tr class="hover:bg-slate-900/60 border-b border-slate-800 transition">
+                        <td class="p-3.5 font-mono font-black text-brand-400">#${prod.serial || 1}</td>
+                        <td class="p-3.5"><span class="bg-brand-500/20 text-brand-300 text-[10px] font-bold px-2.5 py-1 rounded-md border border-brand-500/30">${prod.subject}</span></td>
+                        <td class="p-3.5 font-bold text-white">${prod.title}</td>
+                        <td class="p-3.5 font-semibold text-slate-400">${prod.writer}</td>
+                        <td class="p-3.5 font-black text-white">${regPriceStr} <span class="${prod.price === 0 ? 'text-emerald-400' : 'text-brand-400'}">${prod.price === 0 ? 'FREE (৳০)' : '৳' + prod.price}</span></td>
+                        <td class="p-3.5 text-right space-x-1">
+                            <button onclick="editProduct('${prod.id}')" class="bg-slate-800 hover:bg-slate-700 text-slate-200 text-[11px] px-3 py-1.5 rounded-lg font-bold transition border border-slate-700">এডিট</button>
+                            <button onclick="deleteProduct('${prod.id}')" class="bg-red-950/60 hover:bg-red-900/80 text-red-400 text-[11px] px-3 py-1.5 rounded-lg font-bold transition border border-red-800/50">মুছুন</button>
+                        </td>
+                    </tr>
+                `;
+            }).join('');
         }
 
         function saveProduct(e) {
@@ -1249,6 +1283,7 @@
             const title = document.getElementById('prodTitle').value.trim();
             const subject = document.getElementById('prodSubject').value;
             const writer = document.getElementById('prodWriter').value.trim();
+            const regularPrice = document.getElementById('prodRegularPrice').value ? parseInt(document.getElementById('prodRegularPrice').value) : 0;
             const price = parseInt(document.getElementById('prodPrice').value);
             const pdfUrl = document.getElementById('prodPdfUrl').value.trim();
             const demoUrl = document.getElementById('prodDemoUrl').value.trim();
@@ -1256,10 +1291,10 @@
 
             if (editId) {
                 const prod = products.find(p => p.id === editId);
-                if (prod) Object.assign(prod, { serial, title, subject, writer, price, pdfUrl, demoUrl, description: desc });
+                if (prod) Object.assign(prod, { serial, title, subject, writer, regularPrice, price, pdfUrl, demoUrl, description: desc });
                 showToast('পিডিএফ সমাধান সফলভাবে আপডেট হয়েছে!');
             } else {
-                products.push({ id: 'p' + Date.now(), serial, subject, title, writer, price, pdfUrl, demoUrl, description: desc });
+                products.push({ id: 'p' + Date.now(), serial, subject, title, writer, regularPrice, price, pdfUrl, demoUrl, description: desc });
                 showToast('নতুন উপাদান যোগ করা হয়েছে!');
             }
 
@@ -1278,6 +1313,7 @@
             document.getElementById('prodTitle').value = prod.title;
             document.getElementById('prodSubject').value = prod.subject;
             document.getElementById('prodWriter').value = prod.writer;
+            document.getElementById('prodRegularPrice').value = prod.regularPrice || '';
             document.getElementById('prodPrice').value = prod.price;
             document.getElementById('prodPdfUrl').value = prod.pdfUrl;
             document.getElementById('prodDemoUrl').value = prod.demoUrl || '';
